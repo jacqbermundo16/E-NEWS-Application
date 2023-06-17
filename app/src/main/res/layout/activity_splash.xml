@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    app:layoutDescription="@xml/activity_splash_scene"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/logoimageView"
+        android:layout_width="342dp"
+        android:layout_height="641dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_transparent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.0"
+        android:text="E-NEWS"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:fontFamily="@font/poppins_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/copyrightTextView"
+        android:layout_width="254dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="44dp"
+        android:alpha="0.0"
+        android:text="Made by"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/abeezee"
+        app:layout_constraintBottom_toBottomOf="@+id/logoimageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/comlogoimageView2"
+        android:layout_width="161dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="3dp"
+        android:alpha="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/copyrightTextView"
+        app:srcCompat="@drawable/comlogo_transparent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
