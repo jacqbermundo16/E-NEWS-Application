@@ -7,7 +7,7 @@
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:autoTransition="animateToEnd"
-        motion:duration="5000">
+        motion:duration="4000">
        <KeyFrameSet>
            <KeyAttribute
                motion:motionTarget="@+id/logoimageView"
@@ -35,17 +35,11 @@
            <KeyAttribute
                motion:motionTarget="@+id/copyrightTextView"
                motion:framePosition="80"
-               android:alpha="1.0"
-               android:translationY="-20dp" />
+               android:alpha="1.0" />
            <KeyAttribute
                motion:motionTarget="@+id/comlogoimageView2"
                motion:framePosition="65"
                android:alpha="0.0" />
-           <KeyAttribute
-               motion:motionTarget="@+id/comlogoimageView2"
-               motion:framePosition="80"
-               android:alpha="1.0"
-               android:translationY="-20dp" />
            <KeyAttribute
                motion:motionTarget="@+id/logoimageView"
                motion:framePosition="25"
