@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">E-News</string>
+    <string name="app_name">E-NEWS</string>
+
+    <!--SIGN UP-->
+    <string name="signup_view">CREATE NEW ACCOUNT</string>
+    <string name="details_view">Please enter your details to register</string>
+    <string name="enterName">Username</string>
+    <string name="enterEmail">Email</string>
+    <string name="enterPassword">Password</string>
+    <string name="confirmPassword">Confirm your password</string>
+    <string name="createAcc">CREATE ACCOUNT</string>
+    <string name="haveAcc">Already have an account?</string>
+    <string name="haveAcc_true"><b>Sign in</b></string>
+    <string name="check_terms">By signing up, I state that I have read and understood the <u>terms and conditions.</u></string>
+
+    <!--SIGN IN-->
+    <string name="login_view">LOG IN</string>
+    <string name="login">LOG IN</string>
+    <string name="details2_view">Please enter your details to sign in</string>
+    <string name="forgotPass"><b>Forgot password?</b></string>
+    <string name="noAcc">Don't have an account?</string>
+    <string name="noAcc_true"><b>Register here</b></string>
+
+
 </resources>
