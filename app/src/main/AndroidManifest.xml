@@ -13,7 +13,10 @@
         android:theme="@style/Theme.ENews"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".SigninActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

@@ -18,7 +18,7 @@
     <string name="login">LOG IN</string>
     <string name="details2_view">Please enter your details to sign in</string>
     <string name="forgotPass"><b>Forgot password?</b></string>
-    <string name="noAcc">Don't have an account?</string>
+    <string name="noAcc">Don\'t have an account?</string>
     <string name="noAcc_true"><b>Register here</b></string>
 
 
