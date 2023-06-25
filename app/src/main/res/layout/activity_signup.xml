@@ -84,59 +84,89 @@
         app:layout_constraintTop_toBottomOf="@+id/createAcc"
         app:layout_constraintVertical_bias="0.355" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterName"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="64dp"
         android:autofillHints="no"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_username_foreground"
+        android:drawableStart="@drawable/ic_username_foreground"
         android:drawablePadding="3dp"
         android:ems="10"
         android:fontFamily="@font/montserrat_semibold"
-        android:hint="@string/enterName"
         android:includeFontPadding="false"
         android:inputType="text"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="@+id/createAcc"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/createAcc"
-        app:layout_constraintTop_toBottomOf="@+id/createAcc" />
+        app:layout_constraintTop_toBottomOf="@+id/createAcc">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:drawableStart="@drawable/ic_username_foreground"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/enterName"
+            android:inputType="text"
+            android:scaleType="centerInside"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterEmail"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:autofillHints="no"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_email_foreground"
+        android:drawableStart="@drawable/ic_email_foreground"
         android:drawablePadding="3dp"
         android:ems="10"
         android:fontFamily="@font/montserrat_semibold"
         android:hint="@string/enterEmail"
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="@+id/createAcc"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/enterName"
-        app:layout_constraintTop_toBottomOf="@+id/enterName" />
+        app:layout_constraintTop_toBottomOf="@+id/enterName" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:drawableStart="@drawable/ic_email_foreground"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/enterEmail"
+            android:inputType="text"
+            android:scaleType="centerInside"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/AppTextInputLayout"
         android:id="@+id/enterPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -176,7 +206,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/AppTextInputLayout"
         android:id="@+id/confirmPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"

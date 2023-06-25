@@ -25,16 +25,16 @@
 
     <ImageView
         android:id="@+id/appLogo"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="50dp"
+        android:layout_height="49dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logo_transparent"
-        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.700" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/appName"
@@ -44,12 +44,12 @@
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/login_view"
@@ -83,7 +83,7 @@
         app:layout_constraintStart_toStartOf="@+id/login_view"
         app:layout_constraintTop_toBottomOf="@+id/login_view" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterName_login"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -94,23 +94,37 @@
         android:drawablePadding="3dp"
         android:ems="10"
         android:fontFamily="@font/montserrat_semibold"
-        android:hint="@string/enterName"
         android:includeFontPadding="false"
         android:inputType="text"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="15sp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="@+id/login_view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/login_view"
-        app:layout_constraintTop_toBottomOf="@+id/accDetails2" />
+        app:layout_constraintTop_toBottomOf="@+id/accDetails2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:drawableStart="@drawable/ic_username_foreground"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="@string/enterName"
+            android:inputType="text"
+            android:scaleType="centerInside"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/AppTextInputLayout"
         android:id="@+id/enterPassword_login"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -170,6 +184,7 @@
         android:textSize="17sp"
         android:background="@drawable/custom_btn"
         android:text="@string/login"
+        android:fontFamily="@font/montserrat_medium"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="@+id/enterPassword_login"
@@ -212,14 +227,14 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="60dp"
-        android:layout_height="54dp"
+        android:layout_width="38dp"
+        android:layout_height="35dp"
         android:background="@drawable/ic_backbutton_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/appLogo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.035" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
