@@ -40,7 +40,7 @@
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/poppins_black"
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="32sp"
@@ -49,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/login_view"
@@ -168,6 +168,7 @@
         android:textSize="17sp"
         android:background="@drawable/custom_btn"
         android:text="@string/login"
+        android:fontFamily="@font/montserrat_medium"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="@+id/enterPassword_login"
