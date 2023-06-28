@@ -21,5 +21,11 @@ class LandingActivity : AppCompatActivity() {
             val Intent = Intent(this,SignupActivity::class.java)
             startActivity(Intent)
         }
+
+        val aboutButton = findViewById<Button>(R.id.btn_about)
+        aboutButton.setOnClickListener {
+            val Intent = Intent(this,AboutActivity::class.java)
+            startActivity(Intent)
+        }
     }
 }
