@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">none</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+    </style>
+</resources>

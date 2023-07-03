@@ -24,16 +24,16 @@
 
     <ImageView
         android:id="@+id/appLogo"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="50dp"
+        android:layout_height="49dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logo_transparent"
-        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.700" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/appName"
@@ -43,12 +43,12 @@
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/createAcc"
@@ -67,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/signupOverlay"
         app:layout_constraintTop_toTopOf="@+id/signupOverlay"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/accDetails"
@@ -82,7 +82,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/enterName"
         app:layout_constraintTop_toBottomOf="@+id/createAcc"
-        app:layout_constraintVertical_bias="0.487" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <EditText
         android:id="@+id/enterName"
@@ -136,6 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/enterName" />
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/AppTextInputLayout"
         android:id="@+id/enterPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -147,9 +148,11 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="@+id/enterEmail"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/enterEmail"
@@ -168,10 +171,12 @@
             android:inputType="textPassword"
             android:scaleType="centerInside"
             android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/AppTextInputLayout"
         android:id="@+id/confirmPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -181,11 +186,12 @@
         android:ems="10"
         android:hint="@string/confirmPassword"
         android:inputType="textPassword"
-        android:paddingLeft="6dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="@+id/enterPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/enterPassword"
@@ -200,10 +206,11 @@
             android:drawableStart="@drawable/ic_confirmpass_foreground"
             android:drawablePadding="3dp"
             android:fontFamily="@font/montserrat_semibold"
-            android:hint="@string/enterPassword"
+            android:hint="@string/confirmPassword"
             android:inputType="textPassword"
             android:scaleType="centerInside"
             android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -266,16 +273,15 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="60dp"
-        android:layout_height="54dp"
+        android:layout_width="38dp"
+        android:layout_height="35dp"
         android:background="@drawable/ic_backbutton_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/appLogo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03
-" />
+        app:layout_constraintVertical_bias="0.035" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
