@@ -4,22 +4,28 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import codeblock.app.e_news.databinding.ActivitySigninBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding2.widget.RxTextView
 
 @SuppressLint("CheckResult")
 class SigninActivity : AppCompatActivity() {
 
-    private lateinit var  binding: ActivitySigninBinding
+    private lateinit var binding: ActivitySigninBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Username Validation
-        val usernameStream = RxTextView.textChanges(binding.enterUName)
+        //Authentication
+        auth = FirebaseAuth.getInstance()
+
+        //Username/Email Validation
+        val usernameStream = RxTextView.textChanges(binding.entEmail)
             .skipInitialValue()
             .map { username ->
                 username.isEmpty()
@@ -56,7 +62,9 @@ class SigninActivity : AppCompatActivity() {
 
         // Onclick
         binding.btnLogin.setOnClickListener {
-            startActivity(Intent(this,HomeActivity::class.java))
+            val email = binding.entEmail.text.toString().trim()
+            val password = binding.entPass.text.toString().trim()
+            signinUser(email, password)
         }
 
         binding.noAccTrue.setOnClickListener {
@@ -70,8 +78,22 @@ class SigninActivity : AppCompatActivity() {
 
     private fun showTextMinimalAlert(isNotValid: Boolean, text: String) {
         if (text == "Username")
-            binding.enterUName.error = if (isNotValid) "$text Must be filled." else null
+            binding.entEmail.error = if (isNotValid) "$text Must be filled." else null
         else if (text == "Password")
             binding.entPass.error = if (isNotValid) "$text Must be filled." else null
+    }
+    private fun signinUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { signin ->
+                if (signin.isSuccessful) {
+                    Intent(this, HomeActivity::class.java).also {
+                        it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(it)
+                        Toast.makeText(this, "Login Successfully!", Toast.LENGTH_SHORT).show()
+                    }
+                }else {
+                    Toast.makeText(this, signin.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }

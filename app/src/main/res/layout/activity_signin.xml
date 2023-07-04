@@ -109,14 +109,14 @@
         app:layout_constraintTop_toBottomOf="@+id/accDetails2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterUName"
+            android:id="@+id/entEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_username_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
-            android:hint="@string/enterName"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/enterEmail"
             android:inputType="text"
             android:scaleType="centerInside"
             android:textColorHint="@color/white"
@@ -154,7 +154,7 @@
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_password_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat"
             android:hint="@string/enterPassword"
             android:inputType="textPassword"
             android:scaleType="centerInside"
