@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "104445757602",
+    "project_id": "codeblock-e-news",
+    "storage_bucket": "codeblock-e-news.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104445757602:android:fdc0f7205cc193bdf32ffb",
+        "android_client_info": {
+          "package_name": "codeblock.app.e_news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104445757602-fqfkoeom896b5sth3n80pkk8sldh532b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGdPxWUEgjM9BZXldIOfo4js1dWNJKUj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104445757602-fqfkoeom896b5sth3n80pkk8sldh532b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

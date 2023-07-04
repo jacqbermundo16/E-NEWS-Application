@@ -31,7 +31,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".LandingActivity" />
-        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
