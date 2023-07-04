@@ -109,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/accDetails2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterUName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
@@ -147,6 +148,7 @@
         app:passwordToggleTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
@@ -186,6 +188,7 @@
         android:text="@string/login"
         android:fontFamily="@font/montserrat_medium"
         android:textColor="@color/white"
+        style="@style/btnGray"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="@+id/enterPassword_login"
         app:layout_constraintHorizontal_bias="0.454"
@@ -210,7 +213,7 @@
         app:layout_constraintVertical_bias="0.418" />
 
     <TextView
-        android:id="@+id/noAcc_true"
+        android:id="@+id/noAccTrue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"

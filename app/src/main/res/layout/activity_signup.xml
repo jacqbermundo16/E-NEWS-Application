@@ -111,6 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/createAcc">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterUName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
@@ -152,6 +153,7 @@
         app:layout_constraintTop_toBottomOf="@+id/enterName" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
@@ -191,6 +193,7 @@
         app:passwordToggleTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
@@ -229,6 +232,7 @@
         app:passwordToggleTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/conPass"
             android:layout_width="318dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
@@ -250,6 +254,7 @@
         android:background="@drawable/custom_btn"
         android:text="@string/createAcc"
         android:textColor="@color/white"
+        style="@style/btnGray"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="@+id/confirmPassword"
         app:layout_constraintHorizontal_bias="0.454"
@@ -272,7 +277,7 @@
         app:layout_constraintVertical_bias="0.315" />
 
     <TextView
-        android:id="@+id/haveAcc_true"
+        android:id="@+id/haveAccTrue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
