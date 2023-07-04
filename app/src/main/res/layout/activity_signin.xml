@@ -30,10 +30,10 @@
         android:src="@drawable/logo_transparent"
         app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.700" />
+        app:layout_constraintVertical_bias="0.734" />
 
     <TextView
         android:id="@+id/appName"
@@ -227,17 +227,5 @@
         app:layout_constraintStart_toEndOf="@+id/noAcc"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.58" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="38dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_backbutton_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appLogo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

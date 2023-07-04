@@ -70,10 +70,6 @@ class SigninActivity : AppCompatActivity() {
         binding.noAccTrue.setOnClickListener {
             startActivity(Intent(this,SignupActivity::class.java))
         }
-
-        binding.btnBack.setOnClickListener {
-            startActivity(Intent(this,LandingActivity::class.java))
-        }
     }
 
     private fun showTextMinimalAlert(isNotValid: Boolean, text: String) {

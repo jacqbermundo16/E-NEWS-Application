@@ -100,10 +100,6 @@ class SignupActivity : AppCompatActivity() {
         binding.haveAccTrue.setOnClickListener {
             startActivity(Intent(this,SigninActivity::class.java))
         }
-
-        binding.btnBack.setOnClickListener {
-            startActivity(Intent(this,LandingActivity::class.java))
-        }
     }
 
     private fun showEmailValidAlert(isNotValid: Boolean) {
