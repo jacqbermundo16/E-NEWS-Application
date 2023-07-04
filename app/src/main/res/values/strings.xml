@@ -19,10 +19,13 @@
     <string name="details2_view">Please enter your details to sign in</string>
     <string name="forgotPass"><b>Forgot password?</b></string>
     <string name="noAcc">Don\'t have an account?</string>
-    <string name="noAcc_true"><b>Register here</b></string>\
+    <string name="noAcc_true"><b>Register here</b></string>
+    \
 
     <!-- HOME -->
     <string name="logout">LOGOUT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".FavoritesActivity"
+    tools:context=".MainActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/FavToolbar"
+        android:id="@+id/appToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         
@@ -34,56 +34,45 @@
                android:layout_height="48dp"
                android:layout_alignStart="@+id/appLogo"
                android:layout_alignParentTop="true"
-               android:layout_marginStart="15dp"
+               android:layout_marginStart="5dp"
                android:layout_marginTop="15dp"
                android:background="@color/transparent"
                android:src="@drawable/ic_menu_navigation_foreground" />
 
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_below="@id/appLogo"
-               android:layout_marginTop="15dp"
-               android:paddingStart="20dp"
-               android:paddingEnd="20dp"
-               android:text="Favorites"
-               android:textColor="@color/white"
-               android:textSize="25sp"
-               android:fontFamily="@font/montserrat_semibold"/>
-           
        </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
-    
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/FavNews"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/FavToolbar"
-        android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/news_favorites_item"/>
 
-    <ProgressBar
-        android:id="@+id/FavLoading"
-        android:layout_width="wrap_content"
+    <fragment
+        android:id="@+id/mainContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_below="@+id/appToolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
+        android:layout_alignParentBottom="true"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/navbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appToolbar"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/dark_gray"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/menu_background"
         app:itemTextColor="@drawable/nav_selector"
         app:itemIconTint="@drawable/nav_selector"
         app:itemIconSize="28sp"
-        android:layout_alignParentBottom="true"
         app:menu="@menu/menu_favorites"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="selected"
         app:itemPaddingTop="10dp"
         app:itemPaddingBottom="7dp">
 

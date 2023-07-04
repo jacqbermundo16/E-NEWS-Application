@@ -1,21 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="codeblock.app.e_news.FavoritesActivity" >
+    tools:context="codeblock.app.e_news.MainActivity" >
 
-    <item android:id="@+id/news_page"
+    <item android:id="@+id/news"
         android:title="News"
         android:icon="@drawable/ic_newspage_foreground" />
 
-    <item android:id="@+id/donate_page"
+    <item android:id="@+id/donate"
         android:title="Donate"
         android:icon="@drawable/ic_donatepage_foreground" />
 
-    <item android:id="@+id/favorites_page"
+    <item android:id="@+id/favorites"
         android:title="Favorites"
         android:icon="@drawable/ic_favoritespage_foreground" />
 
-    <item android:id="settingspage"
+    <item android:id="@+id/profile"
         android:title="Profile"
         android:icon="@drawable/ic_profilesettings_foreground" />
 

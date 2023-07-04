@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Profile">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/ProfileTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="20dp"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:fontFamily="@font/montserrat_semibold"/>
+
+</FrameLayout>
