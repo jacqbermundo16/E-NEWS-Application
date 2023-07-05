@@ -20,5 +20,9 @@
     <style name="Theme.ENews.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.ENews.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
+    <style name="btnGray">
+        <item name="android:background">@drawable/custom_btn</item>
+        <item name="android:backgroundTint">@android:color/darker_gray</item>
+        <item name="android:enabled">false</item>
+    </style>
 </resources>

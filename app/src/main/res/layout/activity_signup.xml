@@ -24,31 +24,31 @@
 
     <ImageView
         android:id="@+id/appLogo"
-        android:layout_width="50dp"
-        android:layout_height="49dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logo_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.734" />
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/poppins_black"
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <TextView
         android:id="@+id/createAcc"
@@ -111,12 +111,13 @@
         app:layout_constraintTop_toBottomOf="@+id/createAcc">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterUName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_username_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat"
             android:hint="@string/enterName"
             android:inputType="text"
             android:scaleType="centerInside"
@@ -152,17 +153,18 @@
         app:layout_constraintTop_toBottomOf="@+id/enterName" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_email_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat"
             android:hint="@string/enterEmail"
             android:inputType="text"
             android:scaleType="centerInside"
-            android:textColorHint="@color/white"
             android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -191,12 +193,13 @@
         app:passwordToggleTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_password_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat"
             android:hint="@string/enterPassword"
             android:inputType="textPassword"
             android:scaleType="centerInside"
@@ -229,12 +232,13 @@
         app:passwordToggleTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/conPass"
             android:layout_width="318dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_confirmpass_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat"
             android:hint="@string/confirmPassword"
             android:inputType="textPassword"
             android:scaleType="centerInside"
@@ -250,6 +254,7 @@
         android:background="@drawable/custom_btn"
         android:text="@string/createAcc"
         android:textColor="@color/white"
+        style="@style/btnGray"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="@+id/confirmPassword"
         app:layout_constraintHorizontal_bias="0.454"
@@ -272,7 +277,7 @@
         app:layout_constraintVertical_bias="0.315" />
 
     <TextView
-        android:id="@+id/haveAcc_true"
+        android:id="@+id/haveAccTrue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
@@ -299,18 +304,6 @@
         app:layout_constraintEnd_toEndOf="@+id/confirmPassword"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/confirmPassword" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="38dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_backbutton_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appLogo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

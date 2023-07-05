@@ -148,12 +148,13 @@
         app:passwordToggleTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_password_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
+            android:fontFamily="@font/montserrat"
             android:hint="@string/enterPassword"
             android:inputType="textPassword"
             android:scaleType="centerInside"
@@ -225,17 +226,5 @@
         app:layout_constraintStart_toEndOf="@+id/noAcc"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.58" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="38dp"
-        android:layout_height="35dp"
-        android:background="@drawable/ic_backbutton_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appLogo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.035" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
