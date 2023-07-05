@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="codeblock.app.e_news.FavoritesActivity" >
+
+    <item android:id="@+id/news_page"
+        android:title="News"
+        android:icon="@drawable/ic_newspage_foreground" />
+
+    <item android:id="@+id/donate_page"
+        android:title="Donate"
+        android:icon="@drawable/ic_donatepage_foreground" />
+
+    <item android:id="@+id/favorites_page"
+        android:title="Favorites"
+        android:icon="@drawable/ic_favoritespage_foreground" />
+
+    <item android:id="settingspage"
+        android:title="Profile"
+        android:icon="@drawable/ic_profilesettings_foreground" />
+
+
+</menu>

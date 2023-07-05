@@ -8,11 +8,17 @@
         <!-- status-nav bar color. -->
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:navigationBarColor">@color/black</item>
-        
+
         <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Theme.ENews" parent="Base.Theme.ENews"></style>
+    <style name="Theme.ENews.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ENews.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ENews.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
