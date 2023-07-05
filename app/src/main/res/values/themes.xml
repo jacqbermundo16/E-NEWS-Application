@@ -8,11 +8,15 @@
         <!-- status-nav bar color. -->
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:navigationBarColor">@color/black</item>
-        
+
         <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Theme.ENews" parent="Base.Theme.ENews"></style>
 
-
+    <style name="btnGray">
+        <item name="android:background">@drawable/custom_btn</item>
+        <item name="android:backgroundTint">@android:color/darker_gray</item>
+        <item name="android:enabled">false</item>
+    </style>
 </resources>
