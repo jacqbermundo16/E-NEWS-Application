@@ -14,7 +14,6 @@
         android:id="@+id/signupOverlay"
         android:layout_width="454dp"
         android:layout_height="583dp"
-        android:contentDescription="@string/signup_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
@@ -25,31 +24,31 @@
 
     <ImageView
         android:id="@+id/appLogo"
-        android:layout_width="50dp"
-        android:layout_height="49dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logo_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/poppins_black"
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.596" />
 
     <TextView
         android:id="@+id/login_view"
@@ -110,13 +109,14 @@
         app:layout_constraintTop_toBottomOf="@+id/accDetails2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
             android:drawableStart="@drawable/ic_username_foreground"
             android:drawablePadding="3dp"
-            android:fontFamily="@font/montserrat_semibold"
-            android:hint="@string/enterName"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/enterEmail"
             android:inputType="text"
             android:scaleType="centerInside"
             android:textColorHint="@color/white"
@@ -188,6 +188,7 @@
         android:text="@string/login"
         android:fontFamily="@font/montserrat_medium"
         android:textColor="@color/white"
+        style="@style/btnGray"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="@+id/enterPassword_login"
         app:layout_constraintHorizontal_bias="0.454"
@@ -212,7 +213,7 @@
         app:layout_constraintVertical_bias="0.418" />
 
     <TextView
-        android:id="@+id/noAcc_true"
+        android:id="@+id/noAccTrue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"

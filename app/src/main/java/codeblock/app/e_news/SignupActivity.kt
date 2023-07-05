@@ -77,9 +77,9 @@ class SignupActivity : AppCompatActivity() {
             emailStream,
             passStream,
             conPassStream
-            ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean, confirmPasswordInvalid: Boolean ->
-                !usernameInvalid && !emailInvalid && !passwordInvalid && !confirmPasswordInvalid
-            }
+        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean, confirmPasswordInvalid: Boolean ->
+            !usernameInvalid && !emailInvalid && !passwordInvalid && !confirmPasswordInvalid
+        }
         invalidFieldStream.subscribe { isValid ->
             if (isValid) {
                 binding.btnSignup.isEnabled = true
@@ -87,7 +87,7 @@ class SignupActivity : AppCompatActivity() {
             } else {
                 binding.btnSignup.isEnabled = false
                 binding.btnSignup.backgroundTintList = ContextCompat.getColorStateList(this, android.R.color.darker_gray)
-                }
+            }
         }
 
         //Onclick

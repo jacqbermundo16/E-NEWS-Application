@@ -30,10 +30,10 @@
         android:src="@drawable/logo_transparent"
         app:layout_constraintBottom_toTopOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/appName"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/appLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.596" />
 
     <TextView
         android:id="@+id/createAcc"
@@ -304,6 +304,5 @@
         app:layout_constraintEnd_toEndOf="@+id/confirmPassword"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/confirmPassword" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

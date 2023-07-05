@@ -9,17 +9,17 @@
     android:orientation="vertical">
 
      <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogout"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_btn"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="@string/logout"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+         android:id="@+id/btnLogout"
+         android:layout_width="320dp"
+         android:layout_height="wrap_content"
+         android:background="@drawable/custom_btn"
+         android:fontFamily="@font/montserrat_medium"
+         android:text="@string/logout"
+         android:textColor="@color/white"
+         android:textSize="17sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
