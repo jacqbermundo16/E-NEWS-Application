@@ -15,9 +15,7 @@
         android:title="Favorites"
         android:icon="@drawable/ic_favoritespage_foreground" />
 
-    <item android:id="settingspage"
+    <item android:id="@+id/settings_page"
         android:title="Profile"
         android:icon="@drawable/ic_profilesettings_foreground" />
-
-
 </menu>
