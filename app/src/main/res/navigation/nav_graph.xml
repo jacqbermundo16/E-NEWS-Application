@@ -24,4 +24,9 @@
         android:name="codeblock.app.e_news.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/about"
+        android:name="codeblock.app.e_news.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>
