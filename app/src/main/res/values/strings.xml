@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">E-NEWS</string>
+    <string name="api_key">e047631ef2msh77fa3a93a675193p17e232jsn5aa342e77daf</string>
 
     <!--SIGN UP-->
     <string name="signup_view">CREATE NEW ACCOUNT</string>
