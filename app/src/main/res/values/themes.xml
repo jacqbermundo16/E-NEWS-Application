@@ -16,7 +16,7 @@
         <item name="windowNoTitle">true</item>
     </style>
     <style name="Theme.ENews.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.ENews.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.ENews.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 
     <style name="btnGray">
         <item name="android:background">@drawable/custom_btn</item>
