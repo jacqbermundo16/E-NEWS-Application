@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import codeblock.app.e_news.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.jakewharton.rxbinding2.widget.RxCompoundButton
 import com.jakewharton.rxbinding2.widget.RxTextView
 
 @SuppressLint("CheckResult")
@@ -71,14 +72,20 @@ class SignupActivity : AppCompatActivity() {
             showPasswordConfirmAlert(it)
         }
 
+        //Terms and Conditions
+        val termsAndConditionsStream = RxCompoundButton.checkedChanges(binding.checkTerms)
+            .skipInitialValue()
+
+
         //Button enable
         val invalidFieldStream = io.reactivex.Observable.combineLatest(
             usernameStream,
             emailStream,
             passStream,
-            conPassStream
-        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean, confirmPasswordInvalid: Boolean ->
-            !usernameInvalid && !emailInvalid && !passwordInvalid && !confirmPasswordInvalid
+            conPassStream,
+            termsAndConditionsStream
+        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean, confirmPasswordInvalid: Boolean, termsAndConditionsChecked: Boolean ->
+            !usernameInvalid && !emailInvalid && !passwordInvalid && !confirmPasswordInvalid && termsAndConditionsChecked
         }
         invalidFieldStream.subscribe { isValid ->
             if (isValid) {
