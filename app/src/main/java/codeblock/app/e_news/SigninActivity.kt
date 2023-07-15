@@ -82,7 +82,7 @@ class SigninActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { signin ->
                 if (signin.isSuccessful) {
-                    Intent(this, HomeActivity::class.java).also {
+                    Intent(this, MainActivity::class.java).also {
                         it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(it)
                         Toast.makeText(this, "Login Successfully!", Toast.LENGTH_SHORT).show()

@@ -56,7 +56,7 @@ class SignupActivity : AppCompatActivity() {
         }
 
         //Confirm Password Validation
-        val conPassStream = io.reactivex.Observable.merge(
+      /*  val conPassStream = io.reactivex.Observable.merge(
             RxTextView.textChanges(binding.entPass)
                 .skipInitialValue()
                 .map { password ->
@@ -69,16 +69,16 @@ class SignupActivity : AppCompatActivity() {
                 })
         conPassStream.subscribe {
             showPasswordConfirmAlert(it)
-        }
+        }*/
 
         //Button enable
         val invalidFieldStream = io.reactivex.Observable.combineLatest(
             usernameStream,
             emailStream,
             passStream,
-            conPassStream
-        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean, confirmPasswordInvalid: Boolean ->
-            !usernameInvalid && !emailInvalid && !passwordInvalid && !confirmPasswordInvalid
+            /*conPassStream*/
+        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean,/* confirmPasswordInvalid: Boolean*/ ->
+            !usernameInvalid && !emailInvalid && !passwordInvalid /* !confirmPasswordInvalid*/
         }
         invalidFieldStream.subscribe { isValid ->
             if (isValid) {
@@ -113,10 +113,10 @@ class SignupActivity : AppCompatActivity() {
             binding.entPass.error = if (isNotValid) "$text must be more than 8 characters." else null
     }
 
-    private fun showPasswordConfirmAlert(isNotValid: Boolean) {
+    /*private fun showPasswordConfirmAlert(isNotValid: Boolean) {
         binding.conPass.error = if (isNotValid) "Not the same." else null
     }
-
+*/
     private fun signupUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {

@@ -3,26 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/news">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="codeblock.app.e_news.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
+        android:id="@+id/favorites"
+        android:name="codeblock.app.e_news.Favorites"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="codeblock.app.e_news.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        android:id="@+id/news"
+        android:name="codeblock.app.e_news.News"
+        android:label="News" />
+    <fragment
+        android:id="@+id/donate"
+        android:name="codeblock.app.e_news.Donate"
+        android:label="fragment_donate"
+        tools:layout="@layout/fragment_donate" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="codeblock.app.e_news.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/about"
+        android:name="codeblock.app.e_news.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

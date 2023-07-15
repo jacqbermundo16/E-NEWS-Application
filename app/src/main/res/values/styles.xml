@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundMode">none</item>
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeColor">@android:color/transparent</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeColor">#fff</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColorHighlight">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="hintTextColor">@color/white</item>
     </style>
 </resources>
