@@ -28,6 +28,7 @@
         android:textSize="16sp"
         android:fontFamily="@font/montserrat"
         android:padding="10dp"
+        android:thumb="@drawable/thumb"
         app:track="@drawable/track"/>
 
     <androidx.appcompat.widget.SwitchCompat
@@ -40,6 +41,7 @@
         android:textSize="16sp"
         android:fontFamily="@font/montserrat"
         android:padding="10dp"
+        android:thumb="@drawable/thumb"
         app:track="@drawable/track"/>
 
     <ImageView
