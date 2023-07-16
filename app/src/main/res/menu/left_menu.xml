@@ -7,34 +7,19 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/news"
-            android:icon="@drawable/ic_newspage_foreground"
-            android:title="News"/>
+            android:id="@+id/notifs"
+            android:icon="@drawable/ic_notifs_foreground"
+            android:title="Notifications"/>
 
         <item
-            android:id="@+id/donate"
-            android:title="Donate"
-            android:icon="@drawable/ic_donatepage_foreground" />
-
-        <item
-            android:id="@+id/favorites"
-            android:title="Favorites"
-            android:icon="@drawable/ic_favoritespage_foreground" />
-
-        <item
-            android:id="@+id/profile"
-            android:title="Profile"
-            android:icon="@drawable/ic_profilesettings_foreground" />
+            android:id="@+id/aboutUs"
+            android:title="About Us"
+            android:icon="@drawable/ic_aboutus"/>
     </group>
 
     <item
         android:title="">
-
         <menu>
-            <item
-                android:id="@+id/aboutUs"
-                android:title="About Us"
-                android:icon="@drawable/ic_aboutus"/>
             <item
                 android:id="@+id/logout"
                 android:title="Log out"

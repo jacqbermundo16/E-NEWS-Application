@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Donate">
+    android:padding="10dp"
+    tools:context=".Donate"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/DonateTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:paddingStart="10dp"
         android:paddingEnd="20dp"
         android:text="Donate"
@@ -19,4 +22,210 @@
         android:textSize="25sp"
         android:fontFamily="@font/montserrat_semibold"/>
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:id="@+id/orgImage1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/edit"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/donation_bg"/>
+
+            <TextView
+                android:id="@+id/donateOrg1"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:gravity="start"
+                android:text="Environmental Organization"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_black"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/orgDesc1"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:text="Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/orgContact1"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:text="Contact details: 09123456789"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"/>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:id="@+id/orgImage2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/edit"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/donation_bg" />
+
+            <TextView
+                android:id="@+id/donateOrg2"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:gravity="start"
+                android:text="Environmental Organization"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_black"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/orgDesc2"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:text="Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/orgContact2"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:text="Contact details: 09123456789"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"/>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:id="@+id/orgImage3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/edit"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/donation_bg"/>
+
+            <TextView
+                android:id="@+id/donateOrg3"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:gravity="start"
+                android:text="Environmental Organization"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_black"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/orgDesc3"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:text="Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/orgContact3"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:text="Contact details: 09123456789"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"/>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

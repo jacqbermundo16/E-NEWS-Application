@@ -10,10 +10,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import codeblock.app.e_news.databinding.ActivityMainBinding
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupWithNavController
+import codeblock.app.e_news.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -21,40 +20,64 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var sideNavigationView: NavigationView
+    private lateinit var bottomNavigationView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHostFragment.navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navbar)
-        setupWithNavController(bottomNavigationView, navController)
 
-        drawerLayout = findViewById<DrawerLayout>(R.id.side_navbar)
+        sideNavigationView = binding.navSidebarView
+        bottomNavigationView = binding.navbar
 
-        val toolbar = findViewById<Toolbar>(R.id.side_toolbar)
+        setupSideNavigationView(sideNavigationView)
+        setupBottomNavigationView(bottomNavigationView)
+
+        drawerLayout = binding.sideNavbar
+
+        val toolbar = binding.sideToolbar
         setSupportActionBar(toolbar)
 
-        val navigationView = findViewById<NavigationView>(R.id.nav_sidebarView)
-        navigationView.setNavigationItemSelectedListener(this)
-
-        val toggle = ActionBarDrawerToggle(this,drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.open_nav,
+            R.string.close_nav
+        )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         if (savedInstanceState == null) {
             replaceFragment(News())
-            navigationView.setCheckedItem(R.id.news)
+            sideNavigationView.setCheckedItem(R.id.news)
+        }
+    }
+
+    private fun setupSideNavigationView(navigationView: NavigationView) {
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    private fun setupBottomNavigationView(navigationView: BottomNavigationView) {
+        navigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.news -> replaceFragment(News())
+                R.id.donate -> replaceFragment(Donate())
+                R.id.favorites -> replaceFragment(Favorites())
+                R.id.profile -> replaceFragment(Profile())
+            }
+            true
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.news -> replaceFragment(News())
-            R.id.donate -> replaceFragment(Donate())
-            R.id.favorites -> replaceFragment(Favorites())
-            R.id.profile -> replaceFragment(Profile())
+        when (item.itemId) {
+            R.id.notifs -> replaceFragment(Notifications())
             R.id.aboutUs -> replaceFragment(About())
             R.id.logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
         }
@@ -69,12 +92,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            onBackPressedDispatcher.onBackPressed()
+            super.onBackPressed()
         }
     }
-
 }

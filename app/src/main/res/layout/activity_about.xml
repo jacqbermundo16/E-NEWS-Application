@@ -89,5 +89,30 @@
         app:layout_constraintTop_toTopOf="@+id/signupOverlay"
         app:layout_constraintVertical_bias="0.04000002" />
 
+    <ScrollView
+        android:id="@+id/sv_about"
+        android:layout_width="359dp"
+        android:layout_height="480dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.693">
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="E-NEWS is a leading environmental news platform dedicated to raising awareness, fostering engagement, and driving positive change for our planet. Our mission is to empower individuals, communities, and organizations with the knowledge and inspiration needed to protect and preserve the environment.
+            \n\nAt E-NEWS, we believe that by staying informed about pressing environmental issues, we can make informed choices and take impactful actions. Our platform serves as a comprehensive resource, delivering the latest news, insightful articles, and thought-provoking features on climate change, conservation, sustainable living, and more.
+            \n\nWe strive to create a vibrant and inclusive community of passionate individuals who share a common goal: to create a greener and more sustainable future. Through our platform, users can connect, collaborate, and exchange ideas with like-minded individuals, environmental organizations, and experts from around the world."
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:padding="12dp"
+            android:textSize="17sp"/>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
