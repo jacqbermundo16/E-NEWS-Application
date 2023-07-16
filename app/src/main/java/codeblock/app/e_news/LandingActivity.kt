@@ -1,10 +1,8 @@
 package codeblock.app.e_news
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import codeblock.app.e_news.databinding.ActivityLandingBinding
 import com.google.firebase.auth.FirebaseAuth
 

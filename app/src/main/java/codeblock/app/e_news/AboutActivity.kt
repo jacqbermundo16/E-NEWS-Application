@@ -1,9 +1,7 @@
 package codeblock.app.e_news
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import kotlin.math.max
+import androidx.appcompat.app.AppCompatActivity
 
 class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
