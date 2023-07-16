@@ -52,10 +52,10 @@ class SigninActivity : AppCompatActivity() {
             !usernameInvalid && !passwordInvalid }
         invalidFieldStream.subscribe { isValid ->
             if (isValid) {
-                binding.btnLogin.isEnabled = true
+                binding.btnLogin.isEnabled = false
                 binding.btnLogin.backgroundTintList = ContextCompat.getColorStateList(this, R.color.green)
             } else {
-                binding.btnLogin.isEnabled = false
+                binding.btnLogin.isEnabled = true
                 binding.btnLogin.backgroundTintList = ContextCompat.getColorStateList(this, android.R.color.darker_gray)
             }
         }

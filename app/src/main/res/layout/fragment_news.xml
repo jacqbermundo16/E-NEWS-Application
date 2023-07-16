@@ -25,7 +25,7 @@
         <EditText
             android:id="@+id/searchText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:ems="10"
             android:hint="Search"
             android:paddingStart="20dp"
@@ -37,7 +37,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:inputType="textPersonName"
-            android:textSize="16sp"></EditText>
+            android:textSize="16sp"
+            android:autofillHints="none"></EditText>
 
         <Button
             android:id="@+id/searchBtn"

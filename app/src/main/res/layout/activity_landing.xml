@@ -48,10 +48,11 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/montserrat"
         android:padding="5dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        android:textStyle="italic"
+        android:text=" Stay informed, take action, and make a difference. Join us on a journey to protect our planet and create a sustainable future for all."
         android:textAlignment="center"
         android:textColor="@color/gray"
-        android:textSize="17dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
@@ -62,7 +63,7 @@
     <Button
         android:id="@+id/btn_login"
         android:layout_width="309dp"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/custom_btn"
         android:fontFamily="@font/montserrat_medium"
         android:text="Log In"
@@ -73,12 +74,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.948" />
 
     <Button
         android:id="@+id/btn_signup"
         android:layout_width="309dp"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/custom_btn"
         android:fontFamily="@font/montserrat_medium"
         android:text="Sign Up"
@@ -89,17 +90,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.849" />
 
     <Button
         android:id="@+id/btn_about"
-        android:layout_width="26dp"
-        android:layout_height="25dp"
-        android:background="@drawable/custom_btn2"
+        android:layout_width="39dp"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_btn"
         android:fontFamily="@font/montserrat_medium"
         android:text="?"
-        android:textColor="@color/green"
-        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
