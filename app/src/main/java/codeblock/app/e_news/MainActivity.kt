@@ -1,5 +1,6 @@
 package codeblock.app.e_news
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -14,12 +15,11 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import codeblock.app.e_news.models.Articles
+import codeblock.app.e_news.models.Headlines
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import androidx.recyclerview.widget.RecyclerView
-import codeblock.app.e_news.Adapter
-import codeblock.app.e_news.Models.Articles
-import codeblock.app.e_news.Models.Headlines
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,14 +37,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView = findViewById(R.id.topNews);
-        recyclerView.layoutManager = LinearLayoutManager(this);
-        val country = getCountry();
-        retrieveJson(country,API_KEY);
+        recyclerView = findViewById(R.id.topNews)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val country = getCountry()
+        retrieveJson(country,API_KEY)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
@@ -100,10 +101,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun retrieveJson(country: String, apiKey: String) {
-        val call: Call<Headlines> =
-            ApiClient.getInstance().api.getHeadlines(country, apiKey)
-        call.enqueue(object : Callback<Headlines> {
-            override fun onResponse(call: Call<Headlines>, response: Response<Headlines>) {
+        val call: Call<Headlines?>? = ApiClient.instance?.api?.getHeadlines(country, apiKey)
+        call?.enqueue(object : Callback<Headlines?> {
+            override fun onResponse(call: Call<Headlines?>, response: Response<Headlines?>) {
                 if (response.isSuccessful && response.body()?.articles != null) {
                     articles.clear()
                     articles.addAll(response.body()?.articles!!)
@@ -112,15 +112,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
             }
 
-            override fun onFailure(call: Call<Headlines>, t: Throwable) {
+            override fun onFailure(call: Call<Headlines?>, t: Throwable) {
                 Toast.makeText(this@MainActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         })
     }
 
+
     private fun getCountry(): String {
         val locale: Locale = Locale.getDefault()
-        return locale.country.toLowerCase()
+        return locale.country.toLowerCase(Locale.ROOT)
     }
-
 }
