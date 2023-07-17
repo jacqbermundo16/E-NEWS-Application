@@ -45,7 +45,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         Picasso.with(context).load(imageUrl).into(holder.imageView);
     }
-
     @Override
     public int getItemCount() {
         return articles.size();
