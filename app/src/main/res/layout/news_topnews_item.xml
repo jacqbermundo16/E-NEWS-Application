@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:id="@+id/cardView"
         app:cardCornerRadius="4dp"
         app:cardElevation="4dp">
 
@@ -20,7 +21,8 @@
                 android:id="@+id/newsImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_placeholder_foreground"/>
 
             <ImageView
                 android:layout_width="match_parent"
