@@ -15,6 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import codeblock.app.e_news.Models.Articles
 import codeblock.app.e_news.Models.Headlines
 import codeblock.app.e_news.databinding.ActivityMainBinding
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var recyclerView: RecyclerView
     private val API_KEY = "e047631ef2msh77fa3a93a675193p17e232jsn5aa342e77daf"
     private lateinit var adapter: Adapter
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private val articles: ArrayList<Articles> = ArrayList()
 
 
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh)
         recyclerView = findViewById(R.id.topNews)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val country = getCountry()

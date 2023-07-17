@@ -40,7 +40,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/edit"
+                app:srcCompat="@drawable/ic_placeholder_foreground"
                 />
 
             <ImageView
@@ -108,7 +108,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/edit"
+                app:srcCompat="@drawable/ic_placeholder_foreground"
                 />
 
             <ImageView
@@ -176,7 +176,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/edit"
+                app:srcCompat="@drawable/ic_placeholder_foreground"
                 />
 
             <ImageView

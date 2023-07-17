@@ -133,6 +133,7 @@
 
     <ImageView
         android:id="@+id/changeProfile"
+        android:clickable="true"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:src="@drawable/edit"

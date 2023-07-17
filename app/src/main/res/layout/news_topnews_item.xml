@@ -10,19 +10,19 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/cardView"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="250dp">
 
             <ImageView
                 android:id="@+id/newsImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_placeholder_foreground"/>
+                android:src="@drawable/placeholder"/>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -42,7 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="50dp">
 
                 <TextView
                     android:id="@+id/newsSource"
@@ -65,8 +66,30 @@
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/gray"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="50dp"/>
+
+            <ImageView
+                android:id="@+id/saveFavs"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="200dp"
+                android:clickable="true"
+                android:src="@drawable/ic_favborder_foreground"
+                app:tint="@color/white" />
+
         </FrameLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
