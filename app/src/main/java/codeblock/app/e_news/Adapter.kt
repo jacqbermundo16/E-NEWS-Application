@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import codeblock.app.e_news.models.Articles
+import codeblock.app.e_news.Models.Articles
 import com.squareup.picasso.Picasso
 
 class Adapter(var context: Context, articles: List<Articles>) :
