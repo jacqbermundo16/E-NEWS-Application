@@ -14,7 +14,7 @@ class ApiClient private constructor() {
         get() = retrofit.create(ApiInterface::class.java)
 
     companion object {
-        private const val BASE_URL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=c63f2d130d9a4ca2a0610a2c1682033a"
+        private const val BASE_URL = "https://newsapi.org/v2/"
         private var apiClient: ApiClient? = null
         private lateinit var retrofit: Retrofit
 

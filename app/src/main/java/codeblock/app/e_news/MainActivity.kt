@@ -30,7 +30,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var recyclerView: RecyclerView
-    private val API_KEY = "c63f2d130d9a4ca2a0610a2c1682033a"
+    private val API_KEY = "e047631ef2msh77fa3a93a675193p17e232jsn5aa342e77daf"
     private lateinit var adapter: Adapter
     private val articles: ArrayList<Articles> = ArrayList()
 
