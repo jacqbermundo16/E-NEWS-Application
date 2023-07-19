@@ -1,6 +1,8 @@
+
 package codeblock.app.e_news
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,13 +22,15 @@ class Adapter(var context: Context, articles: List<Articles>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view: View = LayoutInflater.from(parent.getContext())
+        val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.news_topnews_item, parent, false)
+        Log.d("Adapter", "onCreateViewHolder")
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val a: Articles = articles[position]
+        Log.d("Adapter", "Article Title: ${a.title}")
         holder.tvHeading.text = a.title
         holder.tvSource.text = a.source?.name ?: "Unknown"
         holder.tvDate.text = a.publishedAt
