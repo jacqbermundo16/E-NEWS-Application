@@ -1,4 +1,4 @@
-package codeblock.app.e_news.Models
+package codeblock.app.e_news.models
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

@@ -1,5 +1,3 @@
-
-
 package codeblock.app.e_news
 
 import retrofit2.Retrofit

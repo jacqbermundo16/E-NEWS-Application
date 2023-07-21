@@ -1,6 +1,6 @@
 package codeblock.app.e_news
 
-import codeblock.app.e_news.Models.Headlines
+import codeblock.app.e_news.models.Headlines
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

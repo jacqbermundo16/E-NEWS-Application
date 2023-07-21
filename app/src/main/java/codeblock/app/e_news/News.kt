@@ -13,18 +13,15 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.Locale
-import codeblock.app.e_news.Models.Headlines
-import codeblock.app.e_news.Models.Articles
-import codeblock.app.e_news.databinding.FragmentNewsBinding
-import codeblock.app.e_news.Adapter
+import codeblock.app.e_news.models.Headlines
+import codeblock.app.e_news.models.Articles
 
 
 class News : Fragment() {
 
-    private val apiKey = "e047631ef2msh77fa3a93a675193p17e232jsn5aa342e77daf"
+    private val apiKey = "8446b62223ba45538b0c8bea1612f8f4"
     private lateinit var adapter: codeblock.app.e_news.Adapter
     private val articles: ArrayList<Articles> = ArrayList()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,15 +45,18 @@ class News : Fragment() {
     }
 
     private fun retrieveJson(country: String, apiKey: String) {
-        val call: Call<Headlines?>? = ApiClient.getInstance().api.getHeadlines(country, "e047631ef2msh77fa3a93a675193p17e232jsn5aa342e77daf")
+        Log.d("Jetty Boy", "retrieveJson function called")
+        val call: Call<Headlines?>? = ApiClient.getInstance().api.getHeadlines("ph", apiKey)
         call?.enqueue(object : Callback<Headlines?> {
             override fun onResponse(call: Call<Headlines?>, response: Response<Headlines?>) {
                 if (response.isSuccessful && response.body()?.articles != null) {
                     val articleList = response.body()?.articles
                     Log.d("Jetty Boy", "API Response Articles size: ${articleList?.size}")
                     articles.clear()
-                    articles.addAll(response.body()?.articles!!)
+                    articles.addAll(articleList!!)
                     adapter.notifyDataSetChanged()
+                } else {
+                    Log.d("Jetty Boy", "API call was not successful: ${response.code()}")
                 }
             }
 
@@ -71,12 +71,5 @@ class News : Fragment() {
         return locale.country.lowercase(Locale.ROOT)
     }
 
-    private fun setUpRecyclerView() {
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.topNews)
-        val adapter = Adapter(requireContext(), articles) // Replace 'articles' with your actual list of articles
-        recyclerView?.adapter = adapter
-        recyclerView?.layoutManager = LinearLayoutManager(this.context)
-        Log.d("NewsFragment", "RecyclerView and Adapter set up")
-    }
 }
 
