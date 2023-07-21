@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -16,6 +17,11 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="250dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/news_gradient"/>
 
             <ImageView
                 android:id="@+id/newsImage"
@@ -35,8 +41,14 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Heading 1"
-                android:textSize="25sp"
-                android:fontFamily="@font/poppins_black"/>
+                android:textSize="19sp"
+                android:textColor="@color/white"
+                android:shadowColor="#000000"
+                android:shadowDx="1"
+                android:shadowDy="2"
+                android:shadowRadius="6.0"
+                android:fontFamily="@font/montserrat_semibold"
+                android:clickable="true"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,7 +64,7 @@
                     android:padding="10dp"
                     android:text="Source"
                     android:textSize="15sp"
-                    android:fontFamily="@font/poppins_thin"
+                    android:fontFamily="@font/montserrat"
                     android:textColor="@color/white"/>
 
                 <TextView
@@ -61,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:gravity="end"
-                    android:fontFamily="@font/poppins_thin"
+                    android:fontFamily="@font/montserrat"
                     android:text="Date"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -80,12 +92,24 @@
 
             <ImageView
                 android:id="@+id/saveFavs"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_gravity="end"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="202dp"
+                android:layout_marginEnd="50dp"
                 android:clickable="true"
                 android:src="@drawable/ic_favborder_foreground"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/shareNews"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="202dp"
+                android:layout_marginEnd="5dp"
+                android:clickable="true"
+                android:src="@drawable/ic_favshare_foreground"
                 app:tint="@color/white" />
 
         </FrameLayout>
