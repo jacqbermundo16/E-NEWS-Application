@@ -14,7 +14,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/logo_transparent"/>
+            android:src="@drawable/logo"/>
 
         <TextView
             android:id="@+id/title"
