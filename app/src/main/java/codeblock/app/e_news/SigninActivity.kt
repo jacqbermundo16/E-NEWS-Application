@@ -2,10 +2,13 @@ package codeblock.app.e_news
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import codeblock.app.e_news.databinding.ActivitySigninBinding
@@ -18,6 +21,7 @@ class SigninActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySigninBinding
     private lateinit var auth: FirebaseAuth
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
@@ -73,11 +77,10 @@ class SigninActivity : AppCompatActivity() {
             startActivity(Intent(this,SignupActivity::class.java))
         }
 
-        /*
         binding.forgotPass.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val view = layoutInflater.inflate(R.layout.forgot_dialog,null)
-            val userEmail = view.findViewById<EditText>(R.id.editBox)
+            val userEmail = view.findViewById<EditText>(R.id.userEditText)
 
             builder.setView(view)
             val dialog = builder.create()
@@ -96,7 +99,6 @@ class SigninActivity : AppCompatActivity() {
             }
             dialog.show()
         }
-        */
     }
 
     private fun compareEmail(email: EditText){
