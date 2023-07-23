@@ -1,14 +1,11 @@
 package codeblock.app.e_news.models
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Source {
+data class Source (
     @SerializedName("id")
-    @Expose
-    var id: String? = null
+    var id: String?,
 
     @SerializedName("name")
-    @Expose
-    var name: String? = null
-}
+    var name: String?
+)

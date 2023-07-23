@@ -2,9 +2,11 @@ package codeblock.app.e_news
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import codeblock.app.e_news.databinding.ActivitySigninBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -69,6 +71,45 @@ class SigninActivity : AppCompatActivity() {
 
         binding.noAccTrue.setOnClickListener {
             startActivity(Intent(this,SignupActivity::class.java))
+        }
+
+        /*
+        binding.forgotPass.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val view = layoutInflater.inflate(R.layout.forgot_dialog,null)
+            val userEmail = view.findViewById<EditText>(R.id.editBox)
+
+            builder.setView(view)
+            val dialog = builder.create()
+
+            view.findViewById<Button>(R.id.btnReset).setOnClickListener {
+                compareEmail(userEmail)
+                dialog.dismiss()
+            }
+
+            view.findViewById<Button>(R.id.btnCancel).setOnClickListener {
+                dialog.dismiss()
+            }
+
+            if (dialog.window != null){
+                dialog.window!!.setBackgroundDrawable(ColorDrawable(0))
+            }
+            dialog.show()
+        }
+        */
+    }
+
+    private fun compareEmail(email: EditText){
+        if(email.text.toString().isEmpty()){
+            return
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()){
+            return
+        }
+        auth.sendPasswordResetEmail(email.text.toString()).addOnCompleteListener{ task ->
+            if (task.isSuccessful){
+                Toast.makeText(this, "Check your email.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

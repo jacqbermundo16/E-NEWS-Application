@@ -1,30 +1,29 @@
 package codeblock.app.e_news.models
 
-import com.google.gson.annotations.Expose
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-class Articles {
+data class Articles(
+    @PrimaryKey(autoGenerate = true)
+
+    var id : Int? = null,
+
     @SerializedName("source")
-    @Expose
-    var source: Source? = null
+    var source: Source?,
 
     @SerializedName("author")
-    @Expose
-    var author: String? = null
+    var author: String?,
 
     @SerializedName("title")
-    @Expose
-    var title: String? = null
+    var title: String?,
 
     @SerializedName("description")
-    @Expose
-    var description: String? = null
+    var description: String?,
 
     @SerializedName("urlToImage")
-    @Expose
-    var urlToImage: String? = null
+    var urlToImage: String?,
 
     @SerializedName("publishedAt")
-    @Expose
-    var publishedAt: String? = null
-}
+    var publishedAt: String?
+) : Serializable
