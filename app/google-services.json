@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "104445757602",
+    "firebase_url": "https://codeblock-e-news-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "codeblock-e-news",
     "storage_bucket": "codeblock-e-news.appspot.com"
   },
@@ -28,6 +29,36 @@
           "other_platform_oauth_client": [
             {
               "client_id": "104445757602-fqfkoeom896b5sth3n80pkk8sldh532b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243035637927:android:9825cb12a486cd2639b382",
+        "android_client_info": {
+          "package_name": "codeblock.app.e_news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243035637927-epr8q8co2u66o4gq4doptrjt4je1fe9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC48NMaw8pGiQxx79EjgHU-D5eQO3LyyIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243035637927-epr8q8co2u66o4gq4doptrjt4je1fe9t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
