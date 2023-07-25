@@ -1,10 +1,11 @@
 package codeblock.app.e_news
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -14,10 +15,12 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import codeblock.app.e_news.models.Articles
 import codeblock.app.e_news.databinding.ActivityMainBinding
+import codeblock.app.e_news.models.Articles
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,12 +33,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var sideNavigationView: NavigationView
     private lateinit var bottomNavigationView: BottomNavigationView
-
+    private lateinit var auth: FirebaseAuth // Add this variable for FirebaseAuth
+    private lateinit var authStateListener: FirebaseAuth.AuthStateListener // Add this variable for FirebaseAuth.AuthStateListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         swipeRefreshLayout = findViewById(R.id.swipeRefresh)
         recyclerView = findViewById(R.id.topNews)
@@ -70,6 +75,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+        // Initialize FirebaseAuth
+        auth = FirebaseAuth.getInstance()
+
+        // Initialize the AuthStateListener
+        authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user != null && user.isEmailVerified) {
+                // User is logged in and email is verified, proceed to the main activity.
+                // Here you can add any additional checks or operations as needed.
+            } else {
+                // User is not logged in or email is not verified.
+                // Redirect the user to the SigninActivity for authentication.
+                startActivity(Intent(this, SigninActivity::class.java))
+                finish() // Finish the MainActivity to prevent the user from going back.
+            }
+        }
+
+        // Add the AuthStateListener
+        auth.addAuthStateListener(authStateListener)
+
         if (savedInstanceState == null) {
             replaceFragment(News())
             sideNavigationView.setCheckedItem(R.id.news)
@@ -96,7 +121,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.notifs -> replaceFragment(Notifications())
             R.id.aboutUs -> replaceFragment(About())
-            R.id.logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+            R.id.logout -> logout() // Call the logout function to show the AlertDialog
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
@@ -114,5 +139,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             super.onBackPressed()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Remove the AuthStateListener when the activity is destroyed to prevent memory leaks.
+        auth.removeAuthStateListener(authStateListener)
+    }
+
+    private fun logout() {
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setMessage("Are you sure you want to log out?")
+        alertDialogBuilder.setPositiveButton("Yes") { dialog, _ ->
+            // Sign out the user from FirebaseAuth
+            auth.signOut()
+            startActivity(Intent(this, SigninActivity::class.java))
+            finish()
+            dialog.dismiss()
+        }
+        alertDialogBuilder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 }

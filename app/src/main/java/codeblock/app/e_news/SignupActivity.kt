@@ -2,10 +2,10 @@ package codeblock.app.e_news
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import codeblock.app.e_news.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -23,10 +23,10 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //authentication
+        // Authentication
         auth = FirebaseAuth.getInstance()
 
-        //Username Validation
+        // Username Validation
         val usernameStream = RxTextView.textChanges(binding.enterUName)
             .skipInitialValue()
             .map { username ->
@@ -36,7 +36,7 @@ class SignupActivity : AppCompatActivity() {
             showTextMinimalAlert(it, "Username")
         }
 
-        //Email Validation
+        // Email Validation
         val emailStream = RxTextView.textChanges(binding.entEmail)
             .skipInitialValue()
             .map { email ->
@@ -46,7 +46,7 @@ class SignupActivity : AppCompatActivity() {
             showEmailValidAlert(it)
         }
 
-        //Password Validation
+        // Password Validation
         val passStream = RxTextView.textChanges(binding.entPass)
             .skipInitialValue()
             .map { password ->
@@ -56,47 +56,32 @@ class SignupActivity : AppCompatActivity() {
             showTextMinimalAlert(it, "Password")
         }
 
-        //Confirm Password Validation
-      /*  val conPassStream = io.reactivex.Observable.merge(
-            RxTextView.textChanges(binding.entPass)
-                .skipInitialValue()
-                .map { password ->
-                    password.toString() != binding.conPass.text.toString()
-                },
-            RxTextView.textChanges(binding.conPass)
-                .skipInitialValue()
-                .map { conPassword ->
-                    conPassword.toString() != binding.entPass.text.toString()
-                })
-        conPassStream.subscribe {
-            showPasswordConfirmAlert(it)
-        }*/
-
-        //Terms and Conditions
+        // Terms and Conditions
         val termsAndConditionsStream = RxCompoundButton.checkedChanges(binding.checkTerms)
             .skipInitialValue()
 
-        //Button enable
+        // Button enable
         val invalidFieldStream = io.reactivex.Observable.combineLatest(
             usernameStream,
             emailStream,
             passStream,
-            /*conPassStream*/
             termsAndConditionsStream
-        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean,/* confirmPasswordInvalid: Boolean*/ termsAndConditionsChecked: Boolean->
-            !usernameInvalid && !emailInvalid && !passwordInvalid /* !confirmPasswordInvalid*/ && termsAndConditionsChecked
+        ) { usernameInvalid: Boolean, emailInvalid: Boolean, passwordInvalid: Boolean, termsAndConditionsChecked: Boolean ->
+            !usernameInvalid && !emailInvalid && !passwordInvalid && termsAndConditionsChecked
         }
         invalidFieldStream.subscribe { isValid ->
             if (isValid) {
                 binding.btnSignup.isEnabled = true
-                binding.btnSignup.backgroundTintList = ContextCompat.getColorStateList(this, R.color.green)
+                binding.btnSignup.backgroundTintList =
+                    ContextCompat.getColorStateList(this, R.color.green)
             } else {
                 binding.btnSignup.isEnabled = false
-                binding.btnSignup.backgroundTintList = ContextCompat.getColorStateList(this, android.R.color.darker_gray)
+                binding.btnSignup.backgroundTintList =
+                    ContextCompat.getColorStateList(this, android.R.color.darker_gray)
             }
         }
 
-        //Onclick
+        // Onclick
         binding.btnSignup.setOnClickListener {
             val email = binding.entEmail.text.toString().trim()
             val password = binding.entPass.text.toString().trim()
@@ -104,7 +89,7 @@ class SignupActivity : AppCompatActivity() {
         }
 
         binding.haveAccTrue.setOnClickListener {
-            startActivity(Intent(this,SigninActivity::class.java))
+            startActivity(Intent(this, SigninActivity::class.java))
         }
     }
 
@@ -114,23 +99,39 @@ class SignupActivity : AppCompatActivity() {
 
     private fun showTextMinimalAlert(isNotValid: Boolean, text: String) {
         if (text == "Username")
-            binding.enterUName.error = if (isNotValid) "$text must be more than 6 letters." else null
+            binding.enterUName.error =
+                if (isNotValid) "$text must be more than 6 letters." else null
         else if (text == "Password")
-            binding.entPass.error = if (isNotValid) "$text must be more than 8 characters." else null
+            binding.entPass.error =
+                if (isNotValid) "$text must be more than 8 characters." else null
     }
 
-    /*private fun showPasswordConfirmAlert(isNotValid: Boolean) {
-        binding.conPass.error = if (isNotValid) "Not the same." else null
-    }
-*/
     private fun signupUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) {
-                if (it.isSuccessful) {
-                    startActivity(Intent(this,SigninActivity::class.java))
-                    Toast.makeText(this, "Created Account Successfully!", Toast.LENGTH_SHORT).show()
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    user?.sendEmailVerification()?.addOnCompleteListener { verificationTask ->
+                        if (verificationTask.isSuccessful) {
+                            // Show a message to the user indicating that they need to verify their email.
+                            Toast.makeText(
+                                this,
+                                "Account created successfully! Please check your email for verification.",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                            // Redirect the user to the CheckEmailActivity for further instructions.
+                            startActivity(Intent(this, CheckEmailActivity::class.java))
+                        } else {
+                            Toast.makeText(
+                                this,
+                                "Failed to send verification email. Please try again later.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
                 } else {
-                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
                 }
             }
     }

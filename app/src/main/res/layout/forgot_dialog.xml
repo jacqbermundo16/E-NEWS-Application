@@ -109,7 +109,7 @@
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:hint="Username" />
+            android:hint="Email" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

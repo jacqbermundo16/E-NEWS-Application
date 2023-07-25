@@ -21,6 +21,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ENews"
         tools:targetApi="31">
+
+        <activity
+            android:name=".CheckEmailActivity"
+            android:exported="false" />
         <activity
             android:name=".NewsPreview"
             android:exported="false" />
