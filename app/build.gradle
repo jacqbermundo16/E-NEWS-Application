@@ -79,7 +79,7 @@ dependencies {
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
 
     //Picasso for image url
-    implementation 'com.squareup.picasso:picasso:2.5.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 
 
 }
