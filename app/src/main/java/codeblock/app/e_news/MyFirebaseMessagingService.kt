@@ -6,6 +6,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -18,6 +19,14 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     //generate the notification
     //attach the notification created with the custom layout
     //show the notification
+
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        Log.d("FCM Token", token)
+
+        // Here, you can log the FCM token or send it to your server for further processing.
+        // The token should be available and refreshed automatically whenever needed.
+    }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
 
