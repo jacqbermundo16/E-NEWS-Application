@@ -1,6 +1,5 @@
 package codeblock.app.e_news
 
-import News
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -15,7 +14,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import codeblock.app.e_news.databinding.ActivityMainBinding
 import codeblock.app.e_news.models.Articles
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,7 +25,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Adapter
-    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private val articles: ArrayList<Articles> = ArrayList()
 
     private lateinit var navController: NavController
@@ -42,8 +39,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout)
         recyclerView = findViewById(R.id.topNews)
         recyclerView.layoutManager = LinearLayoutManager(this)
 

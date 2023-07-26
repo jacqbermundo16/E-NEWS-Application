@@ -1,3 +1,5 @@
+package codeblock.app.e_news
+
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -10,9 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import codeblock.app.e_news.Adapter
-import codeblock.app.e_news.ApiClient
-import codeblock.app.e_news.R
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import codeblock.app.e_news.models.Articles
 import codeblock.app.e_news.models.Headlines
 import retrofit2.Call
@@ -27,6 +27,8 @@ class News : Fragment() {
     private lateinit var adapter: Adapter
     private val articles: ArrayList<Articles> = ArrayList()
 
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +41,7 @@ class News : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.topNews)
         val searchText = view.findViewById<EditText>(R.id.searchText)
         val searchBtn = view.findViewById<Button>(R.id.searchBtn)
+        val swipeRefreshLayout = view.findViewById<SwipeRefreshLayout>(R.id.swipeRefreshLayout)
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -58,6 +61,18 @@ class News : Fragment() {
                 // If the search query is empty, show a toast message
                 Toast.makeText(requireContext(), "Enter a search query", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // Set up SwipeRefreshLayout's onRefresh listener
+        swipeRefreshLayout.setOnRefreshListener {
+            // Shuffle the articles ArrayList to jumble the news
+            articles.shuffle()
+
+            // Notify the adapter about the data change
+            adapter.notifyDataSetChanged()
+
+            // Stop the refresh animation after the data change is complete
+            swipeRefreshLayout.isRefreshing = false
         }
     }
 
@@ -81,13 +96,6 @@ class News : Fragment() {
 
                     articles.clear()
                     articleList?.let {
-                        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
-                        val outputSdf = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
-                        for (article in it) {
-                            val date = sdf.parse(article.publishedAt)
-                            article.publishedAt = outputSdf.format(date)
-                        }
-
                         articles.addAll(it)
                     }
                     adapter.notifyDataSetChanged()
