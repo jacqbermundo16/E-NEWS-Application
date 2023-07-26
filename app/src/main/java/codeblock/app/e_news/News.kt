@@ -1,5 +1,4 @@
-package codeblock.app.e_news
-
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,11 +10,16 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import codeblock.app.e_news.Adapter
+import codeblock.app.e_news.ApiClient
+import codeblock.app.e_news.R
 import codeblock.app.e_news.models.Articles
 import codeblock.app.e_news.models.Headlines
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class News : Fragment() {
 
@@ -69,6 +73,7 @@ class News : Fragment() {
         Log.d("News", "retrieveJson function called")
         val call: Call<Headlines?>? = ApiClient.getInstance().api.getNewsByQuery(query, apiKey)
         call?.enqueue(object : Callback<Headlines?> {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<Headlines?>, response: Response<Headlines?>) {
                 if (response.isSuccessful && response.body()?.articles != null) {
                     val articleList = response.body()?.articles
@@ -76,6 +81,13 @@ class News : Fragment() {
 
                     articles.clear()
                     articleList?.let {
+                        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
+                        val outputSdf = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+                        for (article in it) {
+                            val date = sdf.parse(article.publishedAt)
+                            article.publishedAt = outputSdf.format(date)
+                        }
+
                         articles.addAll(it)
                     }
                     adapter.notifyDataSetChanged()
@@ -94,6 +106,7 @@ class News : Fragment() {
         Log.d("News", "searchArticles function called with query: $query")
         val call: Call<Headlines?>? = ApiClient.getInstance().api.getNewsByQuery(query, apiKey)
         call?.enqueue(object : Callback<Headlines?> {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<Headlines?>, response: Response<Headlines?>) {
                 if (response.isSuccessful && response.body()?.articles != null) {
                     val articleList = response.body()?.articles
@@ -101,6 +114,13 @@ class News : Fragment() {
 
                     articles.clear()
                     articleList?.let {
+                        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
+                        val outputSdf = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+                        for (article in it) {
+                            val date = sdf.parse(article.publishedAt)
+                            article.publishedAt = outputSdf.format(date)
+                        }
+
                         articles.addAll(it)
                     }
                     adapter.notifyDataSetChanged()

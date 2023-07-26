@@ -1,5 +1,6 @@
 package codeblock.app.e_news
 
+import News
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
