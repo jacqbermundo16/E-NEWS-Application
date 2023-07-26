@@ -2,7 +2,7 @@ package codeblock.app.e_news.models
 
 import com.google.gson.annotations.SerializedName
 
-public class Headlines (
+data class Headlines(
     @SerializedName("articles")
     var articles: MutableList<Articles>,
 

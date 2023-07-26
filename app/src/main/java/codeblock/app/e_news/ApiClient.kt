@@ -1,5 +1,6 @@
 package codeblock.app.e_news
 
+import ApiInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

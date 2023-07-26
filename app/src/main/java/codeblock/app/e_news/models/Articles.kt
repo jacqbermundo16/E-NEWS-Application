@@ -6,8 +6,7 @@ import java.io.Serializable
 
 data class Articles(
     @PrimaryKey(autoGenerate = true)
-
-    var id : Int? = null,
+    var id: Int? = null,
 
     @SerializedName("source")
     var source: Source?,

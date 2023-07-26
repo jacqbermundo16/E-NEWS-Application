@@ -11,10 +11,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import codeblock.app.e_news.models.Articles
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 class Adapter(var context: Context, articles: List<Articles>) :
-    RecyclerView.Adapter<Adapter.ViewHolder?>() {
+    RecyclerView.Adapter<Adapter.ViewHolder>() {
+
     var articles: List<Articles>
 
     init {
@@ -35,9 +37,24 @@ class Adapter(var context: Context, articles: List<Articles>) :
         holder.tvSource.text = a.source?.name ?: "Unknown"
         holder.tvDate.text = a.publishedAt
         val imageUrl: String? = a.urlToImage
-        Picasso.with(context).load(imageUrl).into(holder.imageView)
-    }
+        val httpsImageUrl = imageUrl?.replace("http://", "https://")
 
+        Log.d("Adapter", "Image URL: $imageUrl")
+
+        Picasso.with(context)
+            .load(httpsImageUrl)
+            .placeholder(R.drawable.placeholder)
+            .error(R.drawable.error_image)
+            .into(holder.imageView, object : Callback {
+                override fun onSuccess() {
+                    Log.d("Adapter", "Image loaded successfully: $imageUrl")
+                }
+
+                override fun onError() {
+                    Log.d("Adapter", "Error loading image: $imageUrl")
+                }
+            })
+    }
 
     override fun getItemCount(): Int {
         return articles.size
