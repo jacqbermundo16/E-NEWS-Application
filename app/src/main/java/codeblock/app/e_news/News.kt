@@ -27,8 +27,6 @@ class News : Fragment() {
     private lateinit var adapter: Adapter
     private val articles: ArrayList<Articles> = ArrayList()
 
-    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
