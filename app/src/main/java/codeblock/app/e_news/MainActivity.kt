@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -18,6 +19,7 @@ import codeblock.app.e_news.databinding.ActivityMainBinding
 import codeblock.app.e_news.models.Articles
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
+
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -78,19 +82,30 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val user = firebaseAuth.currentUser
             if (user != null && user.isEmailVerified) {
+                // User is authenticated and their email is verified.
+                if (savedInstanceState == null) {
+                    replaceFragment(News())
+                    sideNavigationView.setCheckedItem(R.id.news)
+                }
             } else {
-                startActivity(Intent(this, SigninActivity::class.java))
-                finish()
+                // User is either not authenticated or their email is not verified.
+                // Handle appropriately if needed.
             }
         }
 
         // Add the AuthStateListener
         auth.addAuthStateListener(authStateListener)
 
-        if (savedInstanceState == null) {
-            replaceFragment(News())
-            sideNavigationView.setCheckedItem(R.id.news)
-        }
+        // Get the header view of the NavigationView
+        val headerView = sideNavigationView.getHeaderView(0)
+
+        val navUserName = headerView.findViewById<TextView>(R.id.nav_userName)
+
+        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val username = sharedPreferences.getString("username", "User") ?: "User"
+
+        // Set the username to the TextView in the header
+        navUserName.text = username
     }
 
     private fun setupSideNavigationView(navigationView: NavigationView) {
@@ -125,6 +140,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         transaction.commit()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
