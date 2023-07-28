@@ -90,16 +90,15 @@
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="50dp"/>
 
-            <ImageView
+            <CheckBox
                 android:id="@+id/saveFavs"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="202dp"
-                android:layout_marginEnd="50dp"
-                android:clickable="true"
-                android:src="@drawable/ic_favborder_foreground"
-                app:tint="@color/white" />
+                android:layout_marginEnd="46dp"
+                android:button="@drawable/fav_article_selector"
+                app:useMaterialThemeColors="false"/>
 
             <ImageView
                 android:id="@+id/shareNews"
