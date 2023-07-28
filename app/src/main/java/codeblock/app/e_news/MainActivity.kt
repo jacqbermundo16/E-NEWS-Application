@@ -1,5 +1,6 @@
 package codeblock.app.e_news
 
+import News
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -23,6 +24,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var recyclerView: RecyclerView
@@ -87,9 +89,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     replaceFragment(News())
                     sideNavigationView.setCheckedItem(R.id.news)
                 }
-            } else {
-                // User is either not authenticated or their email is not verified.
-                // Handle appropriately if needed.
             }
         }
 
