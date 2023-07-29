@@ -109,6 +109,12 @@ class Adapter(var context: Context, articles: List<Articles>) :
             userFavoritesReference.child(article.id.toString()).setValue(article)
         }
 
+        // Update the UI of the heart button (bookmark CheckBox)
+        val position = articles.indexOf(article)
+        if (position != -1) {
+            notifyItemChanged(position)
+        }
+
         // Show a toast message to inform the user about the bookmark action
         if (article.isFavorite) {
             Toast.makeText(context, "Article bookmarked!", Toast.LENGTH_SHORT).show()
