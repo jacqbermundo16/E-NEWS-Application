@@ -1,6 +1,7 @@
 package codeblock.app.e_news
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import codeblock.app.e_news.models.Articles
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+
 
 
 class FavoritesActivity: AppCompatActivity() {
@@ -63,7 +65,7 @@ class FavoritesActivity: AppCompatActivity() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    // Handle any error that occurs during data retrieval
+                    Log.e("FavoritesActivity", "Database error: ${error.message}")
                 }
 
 
