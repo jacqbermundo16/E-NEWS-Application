@@ -43,7 +43,8 @@ class Adapter(var context: Context, articles: List<Articles>) :
         holder.tvDate.text = a.publishedAt
         val imageUrl: String? = a.urlToImage
         val httpsImageUrl = imageUrl?.replace("http://", "https://")
-
+        val article = articles[position]
+        holder.bind(article)
 
         Log.d("Adapter", "Image URL: $imageUrl")
 
@@ -89,8 +90,6 @@ class Adapter(var context: Context, articles: List<Articles>) :
         }
 
         fun bind(article: Articles) {
-            // Bind other views...
-
             // Set the heart CheckBox state based on the isFavorite property
             heartCheckBox.isChecked = article.isFavorite
         }
