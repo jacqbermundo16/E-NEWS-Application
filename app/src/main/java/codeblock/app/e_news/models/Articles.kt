@@ -24,5 +24,7 @@ data class Articles(
     var urlToImage: String?,
 
     @SerializedName("publishedAt")
-    var publishedAt: String?
+    var publishedAt: String?,
+
+    var isFavorite: Boolean = false
 ) : Serializable
