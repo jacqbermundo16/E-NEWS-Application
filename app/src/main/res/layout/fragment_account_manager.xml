@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="20dp"
+    tools:context=".AccountManager">
+
+    <TextView
+        android:id="@+id/AccTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Account Manager"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:fontFamily="@font/montserrat_semibold"/>
+
+
+    <ImageView
+        android:id="@+id/logoNotifs"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        app:srcCompat="@drawable/logo_transparent" />
+
+    <Button
+        android:id="@+id/btnDelAcc"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_btn3"
+        android:text="Delete My Account"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="540dp"
+        app:useMaterialThemeColors="false"/>
+
+</FrameLayout>

@@ -1,4 +1,4 @@
-
+package codeblock.app.e_news
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -12,9 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import codeblock.app.e_news.Adapter
-import codeblock.app.e_news.ApiClient
-import codeblock.app.e_news.R
 import codeblock.app.e_news.models.Articles
 import codeblock.app.e_news.models.Headlines
 import retrofit2.Call
@@ -87,7 +84,7 @@ class News : Fragment() {
 
         val query = "$query1 AND $query2 AND $query3 AND $query4 AND $query5"
 
-        Log.d("News", "retrieveJson function called")
+        Log.d("codeblock.app.e_news.News", "retrieveJson function called")
         val call: Call<Headlines?>? = ApiClient.getInstance().api.getNewsByQuery(query, apiKey)
         call?.enqueue(object : Callback<Headlines?> {
             @SuppressLint("NotifyDataSetChanged")
@@ -120,7 +117,7 @@ class News : Fragment() {
     }
 
     private fun searchArticles(query: String) {
-        Log.d("News", "searchArticles function called with query: $query")
+        Log.d("codeblock.app.e_news.News", "searchArticles function called with query: $query")
         val call: Call<Headlines?>? = ApiClient.getInstance().api.getNewsByQuery(query, apiKey)
         call?.enqueue(object : Callback<Headlines?> {
             @SuppressLint("NotifyDataSetChanged")

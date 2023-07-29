@@ -1,6 +1,5 @@
 package codeblock.app.e_news
 
-import News
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -127,6 +126,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.notifs -> replaceFragment(Notifications())
             R.id.aboutUs -> replaceFragment(About())
+            R.id.accManager -> replaceFragment(AccountManager())
             R.id.logout -> logout()
         }
         drawerLayout.closeDrawer(GravityCompat.START)

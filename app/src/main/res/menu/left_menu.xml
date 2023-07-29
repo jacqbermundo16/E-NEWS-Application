@@ -21,6 +21,10 @@
         android:title="">
         <menu>
             <item
+                android:id="@+id/accManager"
+                android:title="Account Manager"
+                android:icon="@drawable/ic_acc_manager"/>
+            <item
                 android:id="@+id/logout"
                 android:title="Log out"
                 android:icon="@drawable/ic_logout" />
