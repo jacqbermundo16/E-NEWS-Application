@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import codeblock.app.e_news.models.Articles
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +24,11 @@ class Favorites : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    // Declare the RecyclerView and Adapter variables
+    private lateinit var favoritesRecyclerView: RecyclerView
+    private lateinit var favoritesAdapter: Adapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,6 +43,19 @@ class Favorites : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favorites, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Find the RecyclerView by its ID
+        favoritesRecyclerView = view.findViewById(R.id.FavNews)
+
+        // Initialize the Adapter
+        favoritesAdapter = Adapter(requireContext(), mutableListOf()) // Pass an empty list for now
+
+        // Set the Adapter to the RecyclerView
+        favoritesRecyclerView.adapter = favoritesAdapter
     }
 
     companion object {
@@ -57,4 +77,5 @@ class Favorites : Fragment() {
                 }
             }
     }
+
 }

@@ -128,6 +128,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.aboutUs -> replaceFragment(About())
             R.id.accManager -> replaceFragment(AccountManager())
             R.id.logout -> logout()
+            R.id.favorites -> replaceFragment(Favorites())
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

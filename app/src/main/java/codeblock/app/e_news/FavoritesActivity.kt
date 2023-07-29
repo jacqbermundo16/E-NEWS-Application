@@ -34,6 +34,9 @@ class FavoritesActivity: AppCompatActivity() {
 
         // Fetch and display the user's favorite articles
         fetchUserFavorites()
+
+        // Call setFavoritesData() here after initializing the adapter and setting the layout manager
+        setFavoritesData(favoritesList)
     }
 
     private fun fetchUserFavorites() {
@@ -57,13 +60,23 @@ class FavoritesActivity: AppCompatActivity() {
                     favoritesList.clear()
                     favoritesList.addAll(newFavoritesList)
                     diffResult.dispatchUpdatesTo(favoritesAdapter)
+
                 }
 
                 override fun onCancelled(error: DatabaseError) {
                     // Handle any error that occurs during data retrieval
                 }
+
+
             })
         }
     }
-    
+
+    private fun setFavoritesData(newFavoritesList: List<Articles>) {
+        favoritesList.clear()
+        favoritesList.addAll(newFavoritesList)
+        favoritesAdapter.notifyDataSetChanged()
+    }
+
+
 }
