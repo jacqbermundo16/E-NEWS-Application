@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import codeblock.app.e_news.models.Articles
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
@@ -101,8 +102,12 @@ class Adapter(var context: Context, articles: List<Articles>) :
         article.isFavorite = !article.isFavorite
 
         // Save the updated article to Firebase Realtime Database
-        val databaseReference = FirebaseDatabase.getInstance().getReference("articles")
-        databaseReference.child(article.id.toString()).setValue(article)
+        val user = FirebaseAuth.getInstance().currentUser
+        user?.let {
+            val databaseReference = FirebaseDatabase.getInstance().getReference("users")
+            val userFavoritesReference = databaseReference.child(it.uid).child("favorites")
+            userFavoritesReference.child(article.id.toString()).setValue(article)
+        }
 
         // Show a toast message to inform the user about the bookmark action
         if (article.isFavorite) {
