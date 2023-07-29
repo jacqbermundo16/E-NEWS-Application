@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/green</item>
 
         <!-- status-nav bar color. -->
-        <item name="android:statusBarColor">@color/white_shade</item>
+        <item name="android:statusBarColor">@color/black</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
 
