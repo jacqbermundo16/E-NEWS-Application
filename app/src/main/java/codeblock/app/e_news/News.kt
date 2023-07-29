@@ -19,8 +19,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import com.google.firebase.database.FirebaseDatabase
 
-class News : Fragment() {
+class News : Fragment(), Adapter.OnBookmarkClickListener {
 
     private val apiKey = "8446b62223ba45538b0c8bea1612f8f4"
     private lateinit var adapter: Adapter
@@ -46,6 +47,7 @@ class News : Fragment() {
 
         // Initialize the adapter and set it to the RecyclerView
         adapter = Adapter(requireContext(), articles)
+        adapter.setOnBookmarkClickListener(this) // Set the OnBookmarkClickListener
         recyclerView.adapter = adapter
 
         // Fetch initial data on fragment launch
@@ -147,5 +149,24 @@ class News : Fragment() {
                 Toast.makeText(requireContext(), t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    override fun onBookmarkClick(article: Articles) {
+        // Handle the bookmark button click here
+        article.isFavorite = !article.isFavorite
+
+        // Save the updated article to Firebase Realtime Database
+        val databaseReference = FirebaseDatabase.getInstance().getReference("articles")
+        databaseReference.child(article.id.toString()).setValue(article)
+
+        // Notify the adapter that data has changed so it can update the UI
+        adapter.notifyDataSetChanged()
+
+        // Show a toast message to inform the user about the bookmark action
+        if (article.isFavorite) {
+            Toast.makeText(requireContext(), "Article bookmarked!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "Article removed from bookmarks!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
