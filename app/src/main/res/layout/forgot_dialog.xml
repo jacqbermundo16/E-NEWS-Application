@@ -57,7 +57,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginEnd="51dp"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="FORGOT PASSWORD"
+        android:text="FORGOT PASSWORD?"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -73,14 +73,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="354dp"
         android:fontFamily="@font/montserrat"
-        android:text="Enter your email"
+        android:text="Enter your email to reset your password"
         android:textColor="#808080"
         app:layout_constraintBottom_toTopOf="@+id/enterName"
         app:layout_constraintEnd_toEndOf="@+id/signupOverlay"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="@+id/enterName"
         app:layout_constraintTop_toBottomOf="@+id/createAcc"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/AppTextInputLayout"
@@ -116,29 +116,34 @@
     <Button
         android:id="@+id/btnCancel"
         style="@style/btnGray"
-        android:layout_width="148dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginBottom="272dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/custom_btn"
         android:text="Cancel"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
 
     <Button
         android:id="@+id/btnReset"
         style="@style/btnGray"
-        android:layout_width="148dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginBottom="272dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
         android:background="@drawable/custom_btn"
         android:text="Reset"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/signupOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCancel" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

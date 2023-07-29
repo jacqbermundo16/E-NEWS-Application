@@ -34,30 +34,29 @@
             android:layout_height="180dp">
 
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/donation_bg"/>
+
+            <ImageView
                 android:id="@+id/orgImage1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_placeholder_foreground"
-                />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/donation_bg"/>
+                app:srcCompat="@drawable/forest_foundation_ph_logo"/>
 
             <TextView
                 android:id="@+id/donateOrg1"
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:gravity="start"
-                android:text="Environmental Organization"
+                android:text="Forest Foundation Philippines"
                 android:textSize="15sp"
                 android:fontFamily="@font/poppins_black"
                 android:textColor="@color/white"/>
@@ -66,27 +65,83 @@
                 android:id="@+id/orgDesc1"
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="5dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:text="Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat"
-                android:textSize="12sp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"/>
+                android:padding="5dp"
+                android:text="Let's Grow Together"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_phone_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="68dp"/>
 
             <TextView
-                android:id="@+id/orgContact1"
-                android:layout_width="270dp"
+                android:id="@+id/orgPhone1"
+                android:layout_width="247dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:layout_marginEnd="5dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:text="Contact details: 09123456789"
-                android:textSize="12sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"/>
+                android:padding="10dp"
+                android:text="(+63 2) 8891 0595 or (+63 2) 8864 0287"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_email_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="39dp"/>
+
+            <TextView
+                android:id="@+id/orgEmail1"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:text="info@forestfoundation.ph"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_website_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/orgWebsite1"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="135dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:clickable="true"
+                android:text="https://www.forestfoundation.ph"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 
@@ -100,6 +155,11 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="180dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/donation_bg" />
 
             <ImageView
                 android:id="@+id/orgImage2"
@@ -108,24 +168,18 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_placeholder_foreground"
-                />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/donation_bg" />
+                app:srcCompat="@drawable/haribon_foundation_logo" />
 
             <TextView
                 android:id="@+id/donateOrg2"
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:gravity="start"
-                android:text="Environmental Organization"
+                android:text="Haribon Foundation"
                 android:textSize="15sp"
                 android:fontFamily="@font/poppins_black"
                 android:textColor="@color/white"/>
@@ -134,27 +188,83 @@
                 android:id="@+id/orgDesc2"
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="5dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:text="Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat"
-                android:textSize="12sp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"/>
+                android:padding="5dp"
+                android:text="Preserving Life"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_phone_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="68dp"/>
 
             <TextView
-                android:id="@+id/orgContact2"
-                android:layout_width="270dp"
+                android:id="@+id/orgPhone2"
+                android:layout_width="247dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:layout_marginEnd="5dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:text="Contact details: 09123456789"
-                android:textSize="12sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"/>
+                android:padding="10dp"
+                android:text="(+63 2) 8421 1213"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_email_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="39dp"/>
+
+            <TextView
+                android:id="@+id/orgEmail2"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:text="hello@haribon.org.ph"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_website_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/orgWebsite2"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="135dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:clickable="true"
+                android:text="https://haribon.org.ph"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 
@@ -170,30 +280,29 @@
             android:layout_height="180dp">
 
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/donation_bg"/>
+
+            <ImageView
                 android:id="@+id/orgImage3"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_placeholder_foreground"
-                />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/donation_bg"/>
+                app:srcCompat="@drawable/greenpeace_logo" />
 
             <TextView
                 android:id="@+id/donateOrg3"
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:gravity="start"
-                android:text="Environmental Organization"
+                android:text="Greenpeace"
                 android:textSize="15sp"
                 android:fontFamily="@font/poppins_black"
                 android:textColor="@color/white"/>
@@ -202,27 +311,82 @@
                 android:id="@+id/orgDesc3"
                 android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="5dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:text="Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo consequat"
-                android:textSize="12sp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"/>
+                android:padding="5dp"
+                android:text="Create a plastic-free future"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_phone_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="68dp"/>
 
             <TextView
-                android:id="@+id/orgContact3"
-                android:layout_width="270dp"
+                android:id="@+id/orgPhone3"
+                android:layout_width="247dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:layout_marginEnd="5dp"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:text="Contact details: 09123456789"
-                android:textSize="12sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"/>
+                android:padding="10dp"
+                android:text="(+63 2) 8332 1807 or (+63 2) 8332 1806"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_email_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="39dp"/>
+
+            <TextView
+                android:id="@+id/orgEmail3"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="106dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:text="info.ph@greenpeace.org"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|bottom"
+                android:src="@drawable/ic_website_contact_foreground"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/orgWebsite3"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="135dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:clickable="true"
+                android:text="https://www.greenpeace.org/philippines"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 
