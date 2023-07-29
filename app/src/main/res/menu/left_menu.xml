@@ -6,6 +6,10 @@
     <group
         android:checkableBehavior="single">
 
+        <item android:id="@+id/profile"
+            android:title="Profile Settings"
+            android:icon="@drawable/ic_profilesettings_foreground" />
+
         <item
             android:id="@+id/notifs"
             android:icon="@drawable/ic_notifs_foreground"

@@ -7,8 +7,6 @@
     android:background="@drawable/background"
     tools:context=".Profile">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:id="@+id/ProfileTitle"
         android:layout_width="match_parent"
@@ -29,66 +27,97 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="85dp"
         android:src="@mipmap/ic_username_round"
-        android:clickable="false"
         app:civ_border_color="@color/green"
         app:civ_border_width="3dp"/>
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enterName"
+        style="@style/AppTextInputLayout"
+        android:theme="@style/AppTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="250dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/ic_username_foreground"/>
+        android:layout_marginEnd="25dp"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:helperText="Required"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/red">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="310dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/ic_email_contact_foreground"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterUName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:lines="1"
+            android:scaleType="centerInside"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/usernameView"
-        android:layout_width="wrap_content"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enterEmail"
+        style="@style/AppTextInputLayout"
+        android:theme="@style/AppTextInputLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:layout_marginStart="80dp"
-        android:text="Your username"
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat"/>
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/red">
 
-    <TextView
-        android:id="@+id/emailView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="325dp"
-        android:layout_marginStart="80dp"
-        android:text="Your email"
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/enterEmail"
+            android:inputType="text"
+            android:scaleType="centerInside"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnChangePass"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_btn"
-        android:text="CHANGE PASSWORD"
+        android:text="Change Password"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="510dp"
-        app:useMaterialThemeColors="false"/>
+        android:layout_marginTop="508dp"/>
 
     <Button
-        android:id="@+id/btnEditProf"
+        android:id="@+id/btnSignup"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_btn"
-        android:text="EDIT PROFILE"
+        android:text="Save Changes"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="570dp"
         app:useMaterialThemeColors="false"/>
+
+    <ImageView
+        android:id="@+id/changeProfile"
+        android:clickable="true"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/edit"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="40dp"/>
+
 
 </FrameLayout>

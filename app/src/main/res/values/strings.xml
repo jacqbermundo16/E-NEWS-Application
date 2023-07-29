@@ -30,4 +30,10 @@
     <!-- SIDE NAV -->
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
+
+    <!-- DONATE PAGE -->
+    <string name="website_ffph"><u><b><i><a href="https://www.forestfoundation.ph/">forestfoundation.ph</a></i></b></u></string>
+    <string name="website_haribon"><u><b><i><a href="https://haribon.org.ph/">haribon.org.ph</a></i></b></u></string>
+    <string name="website_gpp"><u><b><i><a href="https://www.greenpeace.org/philippines">greenpeace.org/philippines</a></i></b></u></string>
+
 </resources>

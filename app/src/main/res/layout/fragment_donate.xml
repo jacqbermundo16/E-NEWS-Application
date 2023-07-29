@@ -63,7 +63,7 @@
 
             <TextView
                 android:id="@+id/orgDesc1"
-                android:layout_width="270dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="47dp"
@@ -76,16 +76,16 @@
                 android:textStyle="italic" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_phone_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="68dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="71dp"/>
 
             <TextView
                 android:id="@+id/orgPhone1"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -93,21 +93,21 @@
                 android:layout_marginEnd="5dp"
                 android:fontFamily="@font/montserrat"
                 android:padding="10dp"
-                android:text="(+63 2) 8891 0595 or (+63 2) 8864 0287"
+                android:text="(+63 2) 8891 0595"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_email_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="39dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="42dp"/>
 
             <TextView
                 android:id="@+id/orgEmail1"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -117,19 +117,19 @@
                 android:padding="10dp"
                 android:text="info@forestfoundation.ph"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_website_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="12dp"/>
 
             <TextView
                 android:id="@+id/orgWebsite1"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -138,9 +138,11 @@
                 android:fontFamily="@font/montserrat"
                 android:padding="10dp"
                 android:clickable="true"
-                android:text="https://www.forestfoundation.ph"
+                android:text="@string/website_ffph"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp"
+                android:autoLink="web"
+                android:linksClickable="true"/>
 
         </FrameLayout>
     </androidx.cardview.widget.CardView>
@@ -186,7 +188,7 @@
 
             <TextView
                 android:id="@+id/orgDesc2"
-                android:layout_width="270dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="47dp"
@@ -199,16 +201,16 @@
                 android:textStyle="italic" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_phone_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="68dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="71dp"/>
 
             <TextView
                 android:id="@+id/orgPhone2"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -218,19 +220,19 @@
                 android:padding="10dp"
                 android:text="(+63 2) 8421 1213"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_email_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="39dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="42dp"/>
 
             <TextView
                 android:id="@+id/orgEmail2"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -240,19 +242,19 @@
                 android:padding="10dp"
                 android:text="hello@haribon.org.ph"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_website_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="12dp"/>
 
             <TextView
                 android:id="@+id/orgWebsite2"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -261,9 +263,11 @@
                 android:fontFamily="@font/montserrat"
                 android:padding="10dp"
                 android:clickable="true"
-                android:text="https://haribon.org.ph"
+                android:text="@string/website_haribon"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp"
+                android:autoLink="web"
+                android:linksClickable="true"/>
 
         </FrameLayout>
     </androidx.cardview.widget.CardView>
@@ -309,7 +313,7 @@
 
             <TextView
                 android:id="@+id/orgDesc3"
-                android:layout_width="270dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="47dp"
@@ -322,16 +326,16 @@
                 android:textStyle="italic" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
-                android:src="@drawable/ic_phone_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="68dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="71dp"
+                android:src="@drawable/ic_phone_contact_foreground" />
 
             <TextView
                 android:id="@+id/orgPhone3"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -341,19 +345,19 @@
                 android:padding="10dp"
                 android:text="(+63 2) 8332 1807 or (+63 2) 8332 1806"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_email_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="39dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="42dp"/>
 
             <TextView
                 android:id="@+id/orgEmail3"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -363,19 +367,19 @@
                 android:padding="10dp"
                 android:text="info.ph@greenpeace.org"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center|bottom"
                 android:src="@drawable/ic_website_contact_foreground"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="12dp"/>
 
             <TextView
                 android:id="@+id/orgWebsite3"
-                android:layout_width="247dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="20dp"
@@ -384,12 +388,12 @@
                 android:fontFamily="@font/montserrat"
                 android:padding="10dp"
                 android:clickable="true"
-                android:text="https://www.greenpeace.org/philippines"
+                android:text="@string/website_gpp"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="11sp"
+                android:autoLink="web"
+                android:linksClickable="true"/>
         </FrameLayout>
     </androidx.cardview.widget.CardView>
-
-
 
 </LinearLayout>

@@ -116,7 +116,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.news -> replaceFragment(News())
                 R.id.donate -> replaceFragment(Donate())
                 R.id.favorites -> replaceFragment(Favorites())
-                R.id.profile -> replaceFragment(Profile())
             }
             true
         }
@@ -124,6 +123,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.profile -> replaceFragment(Profile())
             R.id.notifs -> replaceFragment(Notifications())
             R.id.aboutUs -> replaceFragment(About())
             R.id.accManager -> replaceFragment(AccountManager())
