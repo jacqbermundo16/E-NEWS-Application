@@ -14,12 +14,16 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import codeblock.app.e_news.models.Articles
 import codeblock.app.e_news.models.Headlines
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class News : Fragment(), Adapter.OnBookmarkClickListener {
 
@@ -28,13 +32,19 @@ class News : Fragment(), Adapter.OnBookmarkClickListener {
     private val articles: ArrayList<Articles> = ArrayList()
 
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var databaseReference: DatabaseReference // Declare the database reference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Initialize the database reference
+        databaseReference = FirebaseDatabase.getInstance().getReference("articles")
+
+        // Rest of the code in onCreateView...
         return inflater.inflate(R.layout.fragment_news, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -75,6 +85,20 @@ class News : Fragment(), Adapter.OnBookmarkClickListener {
             // Stop the refresh animation after the data change is complete
             swipeRefreshLayout.isRefreshing = false
         }
+
+        // Create a ValueEventListener to listen for changes in the "articles" node
+        val valueEventListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                // The rest of your onDataChange code...
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("Firebase", "Error fetching favorite articles: ${error.message}")
+            }
+        }
+
+        // Attach the ValueEventListener to the "articles" node
+        databaseReference.addValueEventListener(valueEventListener)
     }
 
     private fun retrieveJson(apiKey: String) {
