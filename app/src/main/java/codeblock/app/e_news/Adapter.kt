@@ -6,11 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import codeblock.app.e_news.models.Articles
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -29,6 +32,7 @@ class Adapter(var context: Context, articles: List<Articles>) :
             .inflate(R.layout.news_topnews_item, parent, false)
         Log.d("Adapter", "onCreateViewHolder")
         return ViewHolder(view)
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -39,6 +43,7 @@ class Adapter(var context: Context, articles: List<Articles>) :
         holder.tvDate.text = a.publishedAt
         val imageUrl: String? = a.urlToImage
         val httpsImageUrl = imageUrl?.replace("http://", "https://")
+
 
         Log.d("Adapter", "Image URL: $imageUrl")
 
@@ -67,6 +72,7 @@ class Adapter(var context: Context, articles: List<Articles>) :
         var tvDate: TextView
         var imageView: ImageView
         var cardView: CardView
+        private val heartCheckBox: CheckBox = itemView.findViewById(R.id.saveFavs)
 
         init {
             tvHeading = itemView.findViewById<TextView>(R.id.newsHeading)
@@ -74,6 +80,36 @@ class Adapter(var context: Context, articles: List<Articles>) :
             tvDate = itemView.findViewById<TextView>(R.id.newsDate)
             imageView = itemView.findViewById(R.id.newsImage)
             cardView = itemView.findViewById<CardView>(R.id.cardView)
+
+            // Set the click listener for the heart CheckBox
+            heartCheckBox.setOnClickListener {
+                val article = articles[adapterPosition]
+                onBookmarkClick(article)
+            }
+        }
+
+        fun bind(article: Articles) {
+            // Bind other views...
+
+            // Set the heart CheckBox state based on the isFavorite property
+            heartCheckBox.isChecked = article.isFavorite
+        }
+
+    }
+
+    private fun onBookmarkClick(article: Articles) {
+        // Handle the bookmark CheckBox click here
+        article.isFavorite = !article.isFavorite
+
+        // Save the updated article to Firebase Realtime Database
+        val databaseReference = FirebaseDatabase.getInstance().getReference("articles")
+        databaseReference.child(article.id.toString()).setValue(article)
+
+        // Show a toast message to inform the user about the bookmark action
+        if (article.isFavorite) {
+            Toast.makeText(context, "Article bookmarked!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Article removed from bookmarks!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -81,8 +117,6 @@ class Adapter(var context: Context, articles: List<Articles>) :
         fun onBookmarkClick(article: Articles)
     }
 
-    fun setOnBookmarkClickListener(listener: OnBookmarkClickListener) {
-        onBookmarkClickListener = listener
+    fun setOnBookmarkClickListener(listener: OnBookmarkClickListener) { onBookmarkClickListener = listener
     }
-
 }
