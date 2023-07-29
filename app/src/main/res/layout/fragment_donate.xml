@@ -45,7 +45,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/Forest_Foundation_PH_logo"/>
+                app:srcCompat="@drawable/forest_foundation_ph_logo"/>
 
             <TextView
                 android:id="@+id/donateOrg1"
@@ -168,7 +168,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/Haribon_Foundation_logo" />
+                app:srcCompat="@drawable/haribon_foundation_logo" />
 
             <TextView
                 android:id="@+id/donateOrg2"
@@ -291,7 +291,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/Greenpeace_logo" />
+                app:srcCompat="@drawable/greenpeace_logo" />
 
             <TextView
                 android:id="@+id/donateOrg3"
