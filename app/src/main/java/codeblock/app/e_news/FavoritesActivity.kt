@@ -49,7 +49,6 @@ class FavoritesActivity: AppCompatActivity() {
 
             userFavoritesReference.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    favoritesList.clear()
                     for (articleSnapshot in snapshot.children) {
                         val article = articleSnapshot.getValue(Articles::class.java)
                         article?.let { favoritesList.add(it) }
