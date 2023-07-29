@@ -18,6 +18,7 @@ class Adapter(var context: Context, articles: List<Articles>) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     var articles: List<Articles>
+    private var onBookmarkClickListener: OnBookmarkClickListener? = null
 
     init {
         this.articles = articles
@@ -75,4 +76,13 @@ class Adapter(var context: Context, articles: List<Articles>) :
             cardView = itemView.findViewById<CardView>(R.id.cardView)
         }
     }
+
+    interface OnBookmarkClickListener {
+        fun onBookmarkClick(article: Articles)
+    }
+
+    fun setOnBookmarkClickListener(listener: OnBookmarkClickListener) {
+        onBookmarkClickListener = listener
+    }
+
 }
