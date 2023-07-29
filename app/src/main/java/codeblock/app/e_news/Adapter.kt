@@ -99,7 +99,9 @@ class Adapter(var context: Context, articles: List<Articles>) :
 
     private fun onBookmarkClick(article: Articles) {
         // Handle the bookmark CheckBox click here
+        Log.d("Adapter", "onBookmarkClick: Article Title: ${article.title}, isFavorite: ${article.isFavorite}")
         article.isFavorite = !article.isFavorite
+        Log.d("Adapter", "onBookmarkClick: Article Title: ${article.title}, isFavorite: ${article.isFavorite}")
 
         // Save the updated article to Firebase Realtime Database
         val user = FirebaseAuth.getInstance().currentUser
@@ -121,6 +123,9 @@ class Adapter(var context: Context, articles: List<Articles>) :
         } else {
             Toast.makeText(context, "Article removed from bookmarks!", Toast.LENGTH_SHORT).show()
         }
+
+        // Notify the RecyclerView that the data for the specific item has changed
+        notifyItemChanged(articles.indexOf(article))
     }
 
     interface OnBookmarkClickListener {
