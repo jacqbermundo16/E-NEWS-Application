@@ -42,7 +42,7 @@ class News : Fragment(), Adapter.OnItemClickListener {
         adapter = Adapter(requireContext(), articles)
         recyclerView.adapter = adapter
 
-        // Step 5: Set the click listener on the adapter
+        // Set the click listener on the adapter
         adapter.setOnItemClickListener(this)
         return view
     }
