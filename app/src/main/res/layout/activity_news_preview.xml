@@ -25,11 +25,14 @@
             <ImageView
                 android:id="@+id/newsImage"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="3dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
                 android:padding="3dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/placeholder"/>
+                android:src="@drawable/placeholder" />
 
             <TextView
                 android:id="@+id/newsHeading"
@@ -63,7 +66,7 @@
                     android:textStyle="italic"
                     android:padding="5dp"
                     android:textSize="14sp"
-                    android:fontFamily="@font/poppins_thin"
+                    android:fontFamily="@font/montserrat"
                     android:textColor="@color/white"/>
 
                 <TextView
@@ -72,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:gravity="end"
-                    android:fontFamily="@font/poppins_thin"
+                    android:fontFamily="@font/montserrat"
                     android:text="Date"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
@@ -86,22 +89,11 @@
                 android:layout_below="@id/newsDetails"
                 android:text="Content"
                 android:layout_margin="20dp"
-                android:fontFamily="@font/poppins_thin"
+                android:fontFamily="@font/montserrat"
                 android:textColor="@color/white"
                 android:textSize="16sp"/>
         </RelativeLayout>
     </ScrollView>
-
-    <ImageView
-        android:id="@+id/saveFavs"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_above="@+id/btnReadNews"
-        android:layout_marginBottom="5dp"
-        android:layout_toStartOf="@+id/shareFavs"
-        android:clickable="true"
-        android:src="@drawable/ic_favborder_foreground"
-        app:tint="@color/white" />
 
     <ImageView
         android:id="@+id/shareFavs"
@@ -114,8 +106,6 @@
         android:clickable="true"
         android:src="@drawable/ic_favshare_foreground"
         app:tint="@color/white"/>
-
-
 
     <Button
         android:id="@+id/btnReadNews"

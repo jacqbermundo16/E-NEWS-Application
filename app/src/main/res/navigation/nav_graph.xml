@@ -6,11 +6,6 @@
     app:startDestination="@id/news">
 
     <fragment
-        android:id="@+id/favorites"
-        android:name="codeblock.app.e_news.Favorites"
-        android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
-    <fragment
         android:id="@+id/news"
         android:name="codeblock.app.e_news.News"
         android:label="News" />
