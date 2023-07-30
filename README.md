@@ -20,6 +20,10 @@ E-NEWS  is a mobile application designed to provide users with up-to-date and re
 - **News API**: An API that provides access to a wide range of news articles from various sources.
 - **Firebase**: For handling user authentication and data storage.
 
+# Tools 
+- **Google Drive**: Access our tools (Flow Chart, GANTT Chart, etc.) <a href="https://drive.google.com/drive/folders/1X1bTVeiz5bqlwKOvLdVmDIfo-E5APdUi">here</a>!
+- **Trello**: Join our <a href="https://trello.com/w/codeblock6">Trello</a> workspace!
+  
 ## Installation
 1. Download the repository and launch it on Android Studio using an emulator or using your Android device.
 2. Soon to be available for installation on Google Play Store. Thank you for supporting E-NEWS!
