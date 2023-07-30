@@ -12,8 +12,6 @@ E-NEWS  is a mobile application designed to provide users with up-to-date and re
 - **Share News**: Spread awareness by sharing interesting articles with friends and family through social media or other messaging platforms.
 - **User Accounts**: Create a personal account for a more personalized experience.
 
-## Screenshots
-
 ## Technologies Used
 - **Kotlin**: The programming language used for building the mobile app's logic and functionality.
 - **XML**: Used for creating the layout files to define the user interface of the app.
