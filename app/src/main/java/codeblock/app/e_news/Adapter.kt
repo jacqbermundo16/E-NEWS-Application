@@ -2,6 +2,7 @@
 package codeblock.app.e_news
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +31,7 @@ class Adapter(var context: Context, articles: List<Articles>) :
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder:  ViewHolder, position: Int) {
         val a: Articles = articles[position]
         Log.d("Adapter", "Article Title: ${a.title}")
         holder.tvHeading.text = a.title
@@ -54,6 +55,20 @@ class Adapter(var context: Context, articles: List<Articles>) :
                     Log.d("Adapter", "Error loading image: $imageUrl")
                 }
             })
+
+        // Step 4: Set the click listener on the news article item
+        holder.cardView.setOnClickListener {
+            val intent = Intent(context, NewsPreview::class.java)
+            intent.putExtra("title", a.title)
+            intent.putExtra("source", a.source?.name)
+            intent.putExtra("time", (a.publishedAt))
+            intent.putExtra("desc", a.description)
+            intent.putExtra("imageUrl", a.urlToImage)
+            intent.putExtra("url", a.url)
+            context.startActivity(intent)
+        }
+
+
     }
 
     override fun getItemCount(): Int {
@@ -75,4 +90,22 @@ class Adapter(var context: Context, articles: List<Articles>) :
             cardView = itemView.findViewById<CardView>(R.id.cardView)
         }
     }
+
+    // News Preview
+
+    // Step 1: Add a click listener to the Adapter
+    interface OnItemClickListener {
+        fun onItemClick(article: Articles)
+    }
+
+    // Step 2: Create a member variable to hold the listener
+    private var itemClickListener: OnItemClickListener? = null
+
+    // Step 3: Set the click listener from the fragment
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.itemClickListener = listener
+    }
+
+
+
 }

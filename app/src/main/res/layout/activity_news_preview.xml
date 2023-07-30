@@ -26,10 +26,13 @@
                 android:id="@+id/newsImage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_margin="3dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
                 android:padding="3dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/placeholder"/>
+                android:src="@drawable/placeholder" />
 
             <TextView
                 android:id="@+id/newsHeading"
@@ -84,11 +87,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/newsDetails"
-                android:text="Content"
-                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppins_thin"
+                android:text="Content"
                 android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
         </RelativeLayout>
     </ScrollView>
 

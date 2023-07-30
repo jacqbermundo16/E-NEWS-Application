@@ -20,6 +20,9 @@ data class Articles(
     @SerializedName("description")
     var description: String?,
 
+    @SerializedName("url")
+    var url: String?,
+
     @SerializedName("urlToImage")
     var urlToImage: String?,
 
