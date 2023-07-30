@@ -32,7 +32,7 @@
                 android:layout_marginBottom="3dp"
                 android:padding="3dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/placeholder"/>
+                android:src="@drawable/placeholder" />
 
             <TextView
                 android:id="@+id/newsHeading"
