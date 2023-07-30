@@ -115,7 +115,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             when (item.itemId) {
                 R.id.news -> replaceFragment(News())
                 R.id.donate -> replaceFragment(Donate())
-                R.id.favorites -> replaceFragment(Favorites())
             }
             true
         }

@@ -11,9 +11,4 @@
         android:title="Donate"
         android:icon="@drawable/ic_donatepage_foreground" />
 
-    <item android:id="@+id/favorites"
-        android:title="Favorites"
-        android:icon="@drawable/ic_favoritespage_foreground" />
-
-
 </menu>
