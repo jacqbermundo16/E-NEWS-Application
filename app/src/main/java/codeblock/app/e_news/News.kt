@@ -1,5 +1,6 @@
 package codeblock.app.e_news
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,8 +21,8 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
-class News : Fragment() {
-
+class News : Fragment(), Adapter.OnItemClickListener {
+    private lateinit var recyclerView: RecyclerView
     private val apiKey = "8446b62223ba45538b0c8bea1612f8f4"
     private lateinit var adapter: Adapter
     private val articles: ArrayList<Articles> = ArrayList()
@@ -32,7 +33,18 @@ class News : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_news, container, false)
+        val view = inflater.inflate(R.layout.fragment_news, container, false)
+
+        recyclerView = view.findViewById(R.id.topNews)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Initialize the adapter and set it to the RecyclerView
+        adapter = Adapter(requireContext(), articles)
+        recyclerView.adapter = adapter
+
+        // Step 5: Set the click listener on the adapter
+        adapter.setOnItemClickListener(this)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -147,5 +159,16 @@ class News : Fragment() {
                 Toast.makeText(requireContext(), t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    override fun onItemClick(article: Articles) {
+        // Step 7: Create an Intent and pass data to NewsPreviewActivity
+        val intent = Intent(requireContext(), NewsPreview::class.java).apply {
+            putExtra("title", article.title)
+            putExtra("description", article.description)
+        }
+
+        // Step 8: Start NewsPreviewActivity
+        startActivity(intent)
     }
 }
