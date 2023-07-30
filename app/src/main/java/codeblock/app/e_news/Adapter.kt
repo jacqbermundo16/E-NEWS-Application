@@ -63,8 +63,27 @@ class Adapter(var context: Context, articles: List<Articles>) :
             intent.putExtra("source", a.source?.name)
             intent.putExtra("time", (a.publishedAt))
             intent.putExtra("desc", a.description)
-            intent.putExtra("imageUrl", a.urlToImage)
             intent.putExtra("url", a.url)
+
+            val imageUrl: String? = a.urlToImage
+            val httpsImageUrl = imageUrl?.replace("http://", "https://")
+
+            Log.d("Adapter", "Image URL: $imageUrl")
+
+            Picasso.with(context)
+                .load(httpsImageUrl)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error_image)
+                .into(holder.imageView, object : Callback {
+                    override fun onSuccess() {
+                        Log.d("Adapter", "Image loaded successfully: $imageUrl")
+                    }
+
+                    override fun onError() {
+                        Log.d("Adapter", "Error loading image: $imageUrl")
+                    }
+                })
+
             context.startActivity(intent)
         }
 
