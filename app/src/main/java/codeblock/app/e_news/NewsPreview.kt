@@ -42,7 +42,7 @@ class NewsPreview : AppCompatActivity() {
         tvTime.text = time
         tvDesc.text = desc
 
-        //Picasso.get().load(imageUrl).into(imageView)
+        Picasso.with(this).load(imageUrl).into(imageView)
 
 
 
