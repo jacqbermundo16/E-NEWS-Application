@@ -32,7 +32,7 @@
                 android:layout_marginBottom="3dp"
                 android:padding="3dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/placeholder" />
+                android:src="@drawable/placeholder"/>
 
             <TextView
                 android:id="@+id/newsHeading"
@@ -46,7 +46,7 @@
                 android:padding="10dp"
                 android:text="Heading 1"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <LinearLayout
                 android:id="@+id/newsDetails"
