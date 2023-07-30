@@ -99,7 +99,7 @@
         android:layout_marginTop="508dp"/>
 
     <Button
-        android:id="@+id/btnSignup"
+        android:id="@+id/btnSaveChanges"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_btn"
