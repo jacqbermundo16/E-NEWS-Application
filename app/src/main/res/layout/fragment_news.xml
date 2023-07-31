@@ -8,8 +8,6 @@
     android:orientation="vertical"
     tools:context=".News">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +37,8 @@
             android:layout_columnWeight="1"
             android:inputType="textPersonName"
             android:textSize="16sp"
-            android:autofillHints="none"></EditText>
+            android:autofillHints="none"
+            android:textColor="@color/white"></EditText>
 
         <Button
             android:id="@+id/searchBtn"

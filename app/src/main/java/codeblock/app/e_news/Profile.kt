@@ -37,6 +37,7 @@ class Profile : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var userDatabase: DatabaseReference
     private lateinit var headerUsernameTextView: TextView
+    private lateinit var headerEmailTextView: TextView
 
     @SuppressLint("MissingInflatedId", "CutPasteId")
     override fun onCreateView(
@@ -55,12 +56,14 @@ class Profile : Fragment() {
         // Initialize FirebaseAuth and Realtime Database
         auth = FirebaseAuth.getInstance()
         userDatabase = FirebaseDatabase.getInstance().reference.child("users")
+        userDatabase = FirebaseDatabase.getInstance().reference.child("email")
 
         // Retrieve shared preferences for username
         sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", 0)
 
         // Set current username to the TextInputEditText
         enterUName.setText(sharedPreferences.getString("username", "User"))
+        entEmail.setText(sharedPreferences.getString("email", "email@gmail.com"))
 
         // Handle Save Changes button click
         btnSaveChanges.setOnClickListener {
@@ -76,6 +79,7 @@ class Profile : Fragment() {
         }
 
         headerUsernameTextView = headerView.findViewById(R.id.nav_userName)
+        headerEmailTextView = headerView.findViewById(R.id.nav_email)
 
         // Initialize the nav_sidebarView variable
         nav_sidebarView = requireActivity().findViewById(R.id.nav_sidebarView)
@@ -86,6 +90,12 @@ class Profile : Fragment() {
     private fun saveUsernameLocally(username: String) {
         val editor = sharedPreferences.edit()
         editor.putString("username", username)
+        editor.apply()
+    }
+
+    private fun saveEmailLocally(email: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString("email", email)
         editor.apply()
     }
 
@@ -148,6 +158,7 @@ class Profile : Fragment() {
                                     currentUser.updateProfile(
                                         UserProfileChangeRequest.Builder()
                                             .setDisplayName(newUsername)
+                                            .setDisplayName(newEmail)
                                             .build()
                                     ).addOnCompleteListener { profileUpdateTask ->
                                         if (profileUpdateTask.isSuccessful) {
@@ -178,6 +189,14 @@ class Profile : Fragment() {
                                                                         .addOnCompleteListener { verificationTask ->
                                                                             if (verificationTask.isSuccessful) {
                                                                                 showToast("Success! Details changed and verification email sent.")
+
+                                                                                saveEmailLocally(newEmail)
+
+                                                                                // Update header email
+
+                                                                                val headerView = nav_sidebarView.getHeaderView(0)
+                                                                                val headerEmailTextView = headerView.findViewById<TextView>(R.id.nav_email)
+                                                                                headerEmailTextView.text = newEmail
                                                                             } else {
                                                                                 showToast("Failed to send verification email.")
                                                                             }
@@ -309,3 +328,4 @@ class Profile : Fragment() {
     }
 
 }
+

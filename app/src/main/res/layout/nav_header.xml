@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
+    android:layout_height="196dp"
     android:background="@drawable/background"
     android:gravity="bottom"
     android:padding="16dp"
@@ -27,6 +27,16 @@
         android:textSize="20sp"
         android:fontFamily="@font/montserrat_bold"
         android:paddingTop="10dp"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/nav_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="email@gmail.com"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:fontFamily="@font/montserrat"
         android:paddingBottom="5dp"/>
 
 </LinearLayout>

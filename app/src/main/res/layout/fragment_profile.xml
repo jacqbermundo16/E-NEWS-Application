@@ -27,8 +27,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="85dp"
         android:src="@mipmap/ic_username_round"
-        app:civ_border_color="@color/green"
-        app:civ_border_width="3dp"/>
+        app:civ_border_color="@color/white_shade"
+        app:civ_border_width="2dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterName"
@@ -108,16 +108,5 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="570dp"
         app:useMaterialThemeColors="false"/>
-
-    <ImageView
-        android:id="@+id/changeProfile"
-        android:clickable="true"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:src="@drawable/edit"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="170dp"
-        android:layout_marginStart="40dp"/>
-
 
 </FrameLayout>
