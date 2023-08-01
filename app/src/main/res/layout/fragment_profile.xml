@@ -41,7 +41,7 @@
         android:layout_marginEnd="25dp"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
-        app:helperText="Required"
+        app:helperText="At least 6 characters"
         app:helperTextEnabled="true"
         app:helperTextTextColor="@color/red">
 
@@ -71,7 +71,7 @@
         android:layout_marginEnd="25dp"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
-        app:helperText="Required"
+        app:helperText="Must be existing"
         app:helperTextTextColor="@color/red">
 
         <com.google.android.material.textfield.TextInputEditText
