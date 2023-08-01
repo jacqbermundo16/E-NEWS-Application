@@ -46,12 +46,12 @@ class NewsPreview : AppCompatActivity() {
 
 
 
-        /*val btnReadNews = findViewById<Button>(R.id.btnReadNews)
+        val btnReadNews = findViewById<Button>(R.id.btnReadNews)
         btnReadNews.setOnClickListener {
             val fullNewsIntent = Intent(this, FullNewsActivity::class.java)
             fullNewsIntent.putExtra("url", url)
             startActivity(fullNewsIntent)
-        }*/
+        }
 
 
         val shareFavs = findViewById<ImageView>(R.id.shareFavs)
