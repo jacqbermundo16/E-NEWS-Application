@@ -30,6 +30,7 @@ class Profile : Fragment() {
     private lateinit var enterUName: TextInputEditText
     private lateinit var entEmail: TextInputEditText
     private lateinit var btnSaveChanges: Button
+    private lateinit var btnChangePass: Button
     private lateinit var enterName: TextInputLayout
     private lateinit var enterEmail: TextInputLayout
     private lateinit var nav_sidebarView: NavigationView
@@ -50,6 +51,7 @@ class Profile : Fragment() {
         enterUName = rootView.findViewById(R.id.enterUName)
         entEmail = rootView.findViewById(R.id.entEmail)
         btnSaveChanges = rootView.findViewById(R.id.btnSaveChanges)
+        btnChangePass = rootView.findViewById(R.id.btnChangePass)
         enterName = rootView.findViewById(R.id.enterName)
         enterEmail = rootView.findViewById(R.id.enterEmail)
 
@@ -65,18 +67,17 @@ class Profile : Fragment() {
         enterUName.setText(sharedPreferences.getString("username", "User"))
         entEmail.setText(sharedPreferences.getString("email", "email@gmail.com"))
 
-        // Handle Save Changes button click
+        // Handle Save Changes, Change Password, and Circle Image button click
         btnSaveChanges.setOnClickListener {
             showPasswordConfirmationDialog()
+        }
+        btnChangePass.setOnClickListener {
+            showChangePasswordPrompt()
         }
 
         // Find the headerUsernameTextView in the header layout
         val navigationView = requireActivity().findViewById<NavigationView>(R.id.nav_sidebarView)
         val headerView = navigationView.getHeaderView(0)
-        val btnChangePassword = rootView.findViewById<Button>(R.id.btnChangePass)
-        btnChangePassword.setOnClickListener {
-            showChangePasswordPrompt()
-        }
 
         headerUsernameTextView = headerView.findViewById(R.id.nav_userName)
         headerEmailTextView = headerView.findViewById(R.id.nav_email)
@@ -326,6 +327,5 @@ class Profile : Fragment() {
             }
         }
     }
-
 }
 

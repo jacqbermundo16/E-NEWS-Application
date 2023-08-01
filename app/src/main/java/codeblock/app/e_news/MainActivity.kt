@@ -51,8 +51,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         adapter = Adapter(this, articles)
         recyclerView.adapter = adapter
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHostFragment.navController
 
         sideNavigationView = binding.navSidebarView
@@ -98,12 +97,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val headerView = sideNavigationView.getHeaderView(0)
 
         val navUserName = headerView.findViewById<TextView>(R.id.nav_userName)
+        val navEmail = headerView.findViewById<TextView>(R.id.nav_email)
 
         val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         val username = sharedPreferences.getString("username", "User") ?: "User"
+        val email = sharedPreferences.getString("email", "email@gmail.com") ?: "email@gmail.com"
 
         // Set the username to the TextView in the header
         navUserName.text = username
+        navEmail.text = email
     }
 
     private fun setupSideNavigationView(navigationView: NavigationView) {
